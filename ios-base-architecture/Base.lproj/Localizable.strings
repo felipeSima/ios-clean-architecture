@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ios-base-architecture
+
+  Created by Felipe Silva Lima on 11/18/20.
+  
+*/
+
+//MARK: General
+"greetings" = "Olá";
+"okay" = "Ok";
+
+//MARK: Authentication
+"login_title" = "Login";
+"login_username" = "Usuário: ";
+"login_password" = "Senha: ";
+"forget_password_title" = "Esqueceu a senha ?";

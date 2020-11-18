@@ -1,0 +1,12 @@
+//
+//Localization PT-BR
+
+//MARK: General
+"greetings" = "Olá";
+"okay" = "okay";
+
+//MARK: Authentication
+"login_title" = "Login";
+"login_email" = "Username: ";
+"login_password" = "login_password: ";
+"forget_password_title" = "forget password ?";

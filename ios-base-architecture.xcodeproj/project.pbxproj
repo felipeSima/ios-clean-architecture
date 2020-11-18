@@ -1,0 +1,1182 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		883071FC8FBA12554E09EB7A /* Pods_ios_base_architectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F00F647347E0316C53A916 /* Pods_ios_base_architectureTests.framework */; };
+		9D136540256559050043ED5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13653F256559050043ED5B /* AppDelegate.swift */; };
+		9D136542256559050043ED5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D136541256559050043ED5B /* SceneDelegate.swift */; };
+		9D136549256559090043ED5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D136548256559090043ED5B /* Assets.xcassets */; };
+		9D13654C256559090043ED5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D13654A256559090043ED5B /* LaunchScreen.storyboard */; };
+		9D1365572565590A0043ED5B /* ios_base_architectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365562565590A0043ED5B /* ios_base_architectureTests.swift */; };
+		9D1365622565590A0043ED5B /* ios_base_architectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365612565590A0043ED5B /* ios_base_architectureUITests.swift */; };
+		9D13658A25655D9B0043ED5B /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13658925655D9B0043ED5B /* Dimensions.swift */; };
+		9D13659325655EF80043ED5B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13659225655EF80043ED5B /* LoginViewController.swift */; };
+		9D1365A3256561300043ED5B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365A2256561300043ED5B /* LoginView.swift */; };
+		9D1365A8256561D30043ED5B /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365A7256561D30043ED5B /* LoginApi.swift */; };
+		9D1365BE256563070043ED5B /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365BD256563070043ED5B /* LoginRequestModel.swift */; };
+		9D1365C32565631C0043ED5B /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365C22565631C0043ED5B /* LoginResponseModel.swift */; };
+		9D1365C8256563660043ED5B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365C7256563660043ED5B /* LoginViewModel.swift */; };
+		9D1365CD2565638B0043ED5B /* LoginRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365CC2565638B0043ED5B /* LoginRequestEntity.swift */; };
+		9D1365F625656CCA0043ED5B /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365F525656CCA0043ED5B /* ColorPallete.swift */; };
+		9D13661D256577D60043ED5B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D13661B256577D60043ED5B /* Localizable.strings */; };
+		9D13667D2565961E0043ED5B /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666A2565961C0043ED5B /* Montserrat-SemiBold.otf */; };
+		9D13667E2565961E0043ED5B /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666A2565961C0043ED5B /* Montserrat-SemiBold.otf */; };
+		9D1366802565961E0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */; };
+		9D1366812565961E0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */; };
+		9D1366832565961E0043ED5B /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666C2565961C0043ED5B /* Montserrat-Light.otf */; };
+		9D1366842565961E0043ED5B /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666C2565961C0043ED5B /* Montserrat-Light.otf */; };
+		9D1366862565961E0043ED5B /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666D2565961C0043ED5B /* Montserrat-ExtraLight.otf */; };
+		9D1366872565961E0043ED5B /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666D2565961C0043ED5B /* Montserrat-ExtraLight.otf */; };
+		9D1366892565961E0043ED5B /* Montserrat-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666E2565961C0043ED5B /* Montserrat-LightItalic.otf */; };
+		9D13668A2565961E0043ED5B /* Montserrat-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666E2565961C0043ED5B /* Montserrat-LightItalic.otf */; };
+		9D13668C2565961E0043ED5B /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666F2565961C0043ED5B /* Montserrat-MediumItalic.otf */; };
+		9D13668D2565961E0043ED5B /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666F2565961C0043ED5B /* Montserrat-MediumItalic.otf */; };
+		9D13668F2565961E0043ED5B /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366702565961C0043ED5B /* Montserrat-Thin.otf */; };
+		9D1366902565961E0043ED5B /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366702565961C0043ED5B /* Montserrat-Thin.otf */; };
+		9D1366922565961E0043ED5B /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366712565961C0043ED5B /* Montserrat-Black.otf */; };
+		9D1366932565961E0043ED5B /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366712565961C0043ED5B /* Montserrat-Black.otf */; };
+		9D1366952565961E0043ED5B /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */; };
+		9D1366962565961E0043ED5B /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */; };
+		9D1366982565961E0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */; };
+		9D1366992565961E0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */; };
+		9D13669B2565961E0043ED5B /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366742565961D0043ED5B /* Montserrat-BoldItalic.otf */; };
+		9D13669C2565961E0043ED5B /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366742565961D0043ED5B /* Montserrat-BoldItalic.otf */; };
+		9D13669E2565961E0043ED5B /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366752565961D0043ED5B /* Montserrat-Medium.otf */; };
+		9D13669F2565961E0043ED5B /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366752565961D0043ED5B /* Montserrat-Medium.otf */; };
+		9D1366A12565961E0043ED5B /* Montserrat-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366762565961D0043ED5B /* Montserrat-BlackItalic.otf */; };
+		9D1366A22565961E0043ED5B /* Montserrat-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366762565961D0043ED5B /* Montserrat-BlackItalic.otf */; };
+		9D1366A42565961E0043ED5B /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366772565961D0043ED5B /* Montserrat-ExtraBold.otf */; };
+		9D1366A52565961E0043ED5B /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366772565961D0043ED5B /* Montserrat-ExtraBold.otf */; };
+		9D1366A72565961E0043ED5B /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366782565961D0043ED5B /* Montserrat-Regular.otf */; };
+		9D1366A82565961E0043ED5B /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366782565961D0043ED5B /* Montserrat-Regular.otf */; };
+		9D1366AA2565961E0043ED5B /* Montserrat-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366792565961D0043ED5B /* Montserrat-Italic.otf */; };
+		9D1366AB2565961E0043ED5B /* Montserrat-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366792565961D0043ED5B /* Montserrat-Italic.otf */; };
+		9D1366AD2565961E0043ED5B /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667A2565961D0043ED5B /* Montserrat-Bold.otf */; };
+		9D1366AE2565961E0043ED5B /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667A2565961D0043ED5B /* Montserrat-Bold.otf */; };
+		9D1366B02565961E0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */; };
+		9D1366B12565961E0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */; };
+		9D1366BC2565965A0043ED5B /* FontPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366BB2565965A0043ED5B /* FontPallete.swift */; };
+		9D1366BD2565965A0043ED5B /* FontPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366BB2565965A0043ED5B /* FontPallete.swift */; };
+		9D1366BE2565965A0043ED5B /* FontPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366BB2565965A0043ED5B /* FontPallete.swift */; };
+		9D1366C92565AB4C0043ED5B /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */; };
+		9D1366CA2565AB4C0043ED5B /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */; };
+		9D1366CB2565AB4C0043ED5B /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */; };
+		9D13670E2565C5AB0043ED5B /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366702565961C0043ED5B /* Montserrat-Thin.otf */; };
+		9D13670F2565C5AB0043ED5B /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366712565961C0043ED5B /* Montserrat-Black.otf */; };
+		9D1367102565C5AB0043ED5B /* Montserrat-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366762565961D0043ED5B /* Montserrat-BlackItalic.otf */; };
+		9D1367112565C5AB0043ED5B /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366742565961D0043ED5B /* Montserrat-BoldItalic.otf */; };
+		9D1367122565C5AB0043ED5B /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366772565961D0043ED5B /* Montserrat-ExtraBold.otf */; };
+		9D1367132565C5AB0043ED5B /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666D2565961C0043ED5B /* Montserrat-ExtraLight.otf */; };
+		9D1367142565C5AB0043ED5B /* Montserrat-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366792565961D0043ED5B /* Montserrat-Italic.otf */; };
+		9D1367152565C5AB0043ED5B /* Montserrat-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666E2565961C0043ED5B /* Montserrat-LightItalic.otf */; };
+		9D1367162565C5AB0043ED5B /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667A2565961D0043ED5B /* Montserrat-Bold.otf */; };
+		9D1367172565C5AB0043ED5B /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666A2565961C0043ED5B /* Montserrat-SemiBold.otf */; };
+		9D1367182565C5AB0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */; };
+		9D1367192565C5AB0043ED5B /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366782565961D0043ED5B /* Montserrat-Regular.otf */; };
+		9D13671A2565C5AB0043ED5B /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666C2565961C0043ED5B /* Montserrat-Light.otf */; };
+		9D13671B2565C5AB0043ED5B /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666F2565961C0043ED5B /* Montserrat-MediumItalic.otf */; };
+		9D13671C2565C5AB0043ED5B /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */; };
+		9D13671D2565C5AB0043ED5B /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366752565961D0043ED5B /* Montserrat-Medium.otf */; };
+		9D13671E2565C5AB0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */; };
+		9D13671F2565C5AB0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */; };
+		DB73DFDB24D65BCBEB8AEDDB /* Pods_ios_base_architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F5E890E8B870424BB404D3 /* Pods_ios_base_architecture.framework */; };
+		E74D0D79C34BC8D51DB89DCC /* Pods_ios_base_architecture_ios_base_architectureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08EFEC7E6B747B315F2D1DD /* Pods_ios_base_architecture_ios_base_architectureUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D1365532565590A0043ED5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D136534256559050043ED5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D13653B256559050043ED5B;
+			remoteInfo = "ios-base-architecture";
+		};
+		9D13655E2565590A0043ED5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D136534256559050043ED5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D13653B256559050043ED5B;
+			remoteInfo = "ios-base-architecture";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		142FAC1FB181766963C53CF9 /* Pods-ios-base-architecture-ios-base-architectureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architecture-ios-base-architectureUITests.debug.xcconfig"; path = "Target Support Files/Pods-ios-base-architecture-ios-base-architectureUITests/Pods-ios-base-architecture-ios-base-architectureUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E6FB41033D6C321D177F6DF /* Pods-ios-base-architecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architecture.debug.xcconfig"; path = "Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture.debug.xcconfig"; sourceTree = "<group>"; };
+		46F5E890E8B870424BB404D3 /* Pods_ios_base_architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76975060C584B6C01FC538A8 /* Pods-ios-base-architectureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architectureTests.release.xcconfig"; path = "Target Support Files/Pods-ios-base-architectureTests/Pods-ios-base-architectureTests.release.xcconfig"; sourceTree = "<group>"; };
+		9D13653C256559050043ED5B /* ios-base-architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-base-architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D13653F256559050043ED5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D136541256559050043ED5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9D136548256559090043ED5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D13654B256559090043ED5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D13654D256559090043ED5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D1365522565590A0043ED5B /* ios-base-architectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-base-architectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1365562565590A0043ED5B /* ios_base_architectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_base_architectureTests.swift; sourceTree = "<group>"; };
+		9D1365582565590A0043ED5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D13655D2565590A0043ED5B /* ios-base-architectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-base-architectureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1365612565590A0043ED5B /* ios_base_architectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_base_architectureUITests.swift; sourceTree = "<group>"; };
+		9D1365632565590A0043ED5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D13658925655D9B0043ED5B /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		9D13659225655EF80043ED5B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9D1365A2256561300043ED5B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9D1365A7256561D30043ED5B /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		9D1365BD256563070043ED5B /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		9D1365C22565631C0043ED5B /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		9D1365C7256563660043ED5B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9D1365CC2565638B0043ED5B /* LoginRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestEntity.swift; sourceTree = "<group>"; };
+		9D1365F525656CCA0043ED5B /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		9D1365FB2565755E0043ED5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9D13661C256577D60043ED5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D136621256577EF0043ED5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D13666A2565961C0043ED5B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		9D13666C2565961C0043ED5B /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		9D13666D2565961C0043ED5B /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		9D13666E2565961C0043ED5B /* Montserrat-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.otf"; sourceTree = "<group>"; };
+		9D13666F2565961C0043ED5B /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
+		9D1366702565961C0043ED5B /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		9D1366712565961C0043ED5B /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.otf"; sourceTree = "<group>"; };
+		9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		9D1366742565961D0043ED5B /* Montserrat-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.otf"; sourceTree = "<group>"; };
+		9D1366752565961D0043ED5B /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		9D1366762565961D0043ED5B /* Montserrat-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.otf"; sourceTree = "<group>"; };
+		9D1366772565961D0043ED5B /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		9D1366782565961D0043ED5B /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		9D1366792565961D0043ED5B /* Montserrat-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.otf"; sourceTree = "<group>"; };
+		9D13667A2565961D0043ED5B /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		9D1366BB2565965A0043ED5B /* FontPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPallete.swift; sourceTree = "<group>"; };
+		9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		B893A061EE6384F02F63D8FD /* Pods-ios-base-architecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architecture.release.xcconfig"; path = "Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture.release.xcconfig"; sourceTree = "<group>"; };
+		C7F00F647347E0316C53A916 /* Pods_ios_base_architectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_architectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08EFEC7E6B747B315F2D1DD /* Pods_ios_base_architecture_ios_base_architectureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_architecture_ios_base_architectureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8959D1AAAD74B81D7ED1FF /* Pods-ios-base-architectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architectureTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-base-architectureTests/Pods-ios-base-architectureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCB4EA470D25D1873C68342E /* Pods-ios-base-architecture-ios-base-architectureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architecture-ios-base-architectureUITests.release.xcconfig"; path = "Target Support Files/Pods-ios-base-architecture-ios-base-architectureUITests/Pods-ios-base-architecture-ios-base-architectureUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D136539256559050043ED5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB73DFDB24D65BCBEB8AEDDB /* Pods_ios_base_architecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D13654F2565590A0043ED5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				883071FC8FBA12554E09EB7A /* Pods_ios_base_architectureTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D13655A2565590A0043ED5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74D0D79C34BC8D51DB89DCC /* Pods_ios_base_architecture_ios_base_architectureUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		498F25D9BA053B376791C870 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46F5E890E8B870424BB404D3 /* Pods_ios_base_architecture.framework */,
+				E08EFEC7E6B747B315F2D1DD /* Pods_ios_base_architecture_ios_base_architectureUITests.framework */,
+				C7F00F647347E0316C53A916 /* Pods_ios_base_architectureTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A247825E571619F895F778B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E6FB41033D6C321D177F6DF /* Pods-ios-base-architecture.debug.xcconfig */,
+				B893A061EE6384F02F63D8FD /* Pods-ios-base-architecture.release.xcconfig */,
+				142FAC1FB181766963C53CF9 /* Pods-ios-base-architecture-ios-base-architectureUITests.debug.xcconfig */,
+				FCB4EA470D25D1873C68342E /* Pods-ios-base-architecture-ios-base-architectureUITests.release.xcconfig */,
+				EF8959D1AAAD74B81D7ED1FF /* Pods-ios-base-architectureTests.debug.xcconfig */,
+				76975060C584B6C01FC538A8 /* Pods-ios-base-architectureTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D136533256559050043ED5B = {
+			isa = PBXGroup;
+			children = (
+				9D13653E256559050043ED5B /* ios-base-architecture */,
+				9D1365552565590A0043ED5B /* ios-base-architectureTests */,
+				9D1365602565590A0043ED5B /* ios-base-architectureUITests */,
+				9D13653D256559050043ED5B /* Products */,
+				9A247825E571619F895F778B /* Pods */,
+				498F25D9BA053B376791C870 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D13653D256559050043ED5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D13653C256559050043ED5B /* ios-base-architecture.app */,
+				9D1365522565590A0043ED5B /* ios-base-architectureTests.xctest */,
+				9D13655D2565590A0043ED5B /* ios-base-architectureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D13653E256559050043ED5B /* ios-base-architecture */ = {
+			isa = PBXGroup;
+			children = (
+				9D136572256559E90043ED5B /* core */,
+				9D13657525655A290043ED5B /* environment */,
+				9D13657625655A3B0043ED5B /* ui */,
+				9D13657425655A200043ED5B /* features */,
+				9D13653F256559050043ED5B /* AppDelegate.swift */,
+				9D136541256559050043ED5B /* SceneDelegate.swift */,
+				9D136548256559090043ED5B /* Assets.xcassets */,
+				9D13654A256559090043ED5B /* LaunchScreen.storyboard */,
+				9D13654D256559090043ED5B /* Info.plist */,
+				9D13661B256577D60043ED5B /* Localizable.strings */,
+			);
+			path = "ios-base-architecture";
+			sourceTree = "<group>";
+		};
+		9D1365552565590A0043ED5B /* ios-base-architectureTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365562565590A0043ED5B /* ios_base_architectureTests.swift */,
+				9D1365582565590A0043ED5B /* Info.plist */,
+			);
+			path = "ios-base-architectureTests";
+			sourceTree = "<group>";
+		};
+		9D1365602565590A0043ED5B /* ios-base-architectureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365612565590A0043ED5B /* ios_base_architectureUITests.swift */,
+				9D1365632565590A0043ED5B /* Info.plist */,
+			);
+			path = "ios-base-architectureUITests";
+			sourceTree = "<group>";
+		};
+		9D136572256559E90043ED5B /* core */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365D8256565840043ED5B /* base */,
+				9D1365D1256563DE0043ED5B /* session */,
+				9D13657725655A650043ED5B /* api */,
+				9D13657825655B530043ED5B /* database */,
+				9D13658425655BFB0043ED5B /* extension */,
+				9D13658325655BF00043ED5B /* enum */,
+				9D13658525655C9E0043ED5B /* utils */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		9D13657425655A200043ED5B /* features */ = {
+			isa = PBXGroup;
+			children = (
+				9D13658E25655E4C0043ED5B /* authentication */,
+				9D1365E9256566B50043ED5B /* home */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		9D13657525655A290043ED5B /* environment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = environment;
+			sourceTree = "<group>";
+		};
+		9D13657625655A3B0043ED5B /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				9D13658825655D670043ED5B /* components */,
+				9D13658725655D590043ED5B /* fonts */,
+				9D13658625655D130043ED5B /* colors */,
+				9D13658925655D9B0043ED5B /* Dimensions.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		9D13657725655A650043ED5B /* api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		9D13657825655B530043ED5B /* database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		9D13658325655BF00043ED5B /* enum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
+		9D13658425655BFB0043ED5B /* extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		9D13658525655C9E0043ED5B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		9D13658625655D130043ED5B /* colors */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365F525656CCA0043ED5B /* ColorPallete.swift */,
+			);
+			path = colors;
+			sourceTree = "<group>";
+		};
+		9D13658725655D590043ED5B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D1366662565959F0043ED5B /* montserrat */,
+				9D1366BB2565965A0043ED5B /* FontPallete.swift */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		9D13658825655D670043ED5B /* components */ = {
+			isa = PBXGroup;
+			children = (
+				9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		9D13658E25655E4C0043ED5B /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365DF256566450043ED5B /* signup */,
+				9D13659A256560920043ED5B /* login */,
+				9D13659E2565609E0043ED5B /* forget_password */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		9D13658F25655ECA0043ED5B /* data */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365A7256561D30043ED5B /* LoginApi.swift */,
+				9D1365BD256563070043ED5B /* LoginRequestModel.swift */,
+				9D1365C22565631C0043ED5B /* LoginResponseModel.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		9D13659025655ED30043ED5B /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365C7256563660043ED5B /* LoginViewModel.swift */,
+				9D1365CC2565638B0043ED5B /* LoginRequestEntity.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		9D13659125655ED80043ED5B /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9D13659225655EF80043ED5B /* LoginViewController.swift */,
+				9D1365A2256561300043ED5B /* LoginView.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		9D13659A256560920043ED5B /* login */ = {
+			isa = PBXGroup;
+			children = (
+				9D13659125655ED80043ED5B /* presentation */,
+				9D13659025655ED30043ED5B /* domain */,
+				9D13658F25655ECA0043ED5B /* data */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		9D13659E2565609E0043ED5B /* forget_password */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365A02565610B0043ED5B /* data */,
+				9D1365A1256561110043ED5B /* domain */,
+				9D13659F256561020043ED5B /* presentation */,
+			);
+			path = forget_password;
+			sourceTree = "<group>";
+		};
+		9D13659F256561020043ED5B /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		9D1365A02565610B0043ED5B /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		9D1365A1256561110043ED5B /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		9D1365D1256563DE0043ED5B /* session */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = session;
+			sourceTree = "<group>";
+		};
+		9D1365D8256565840043ED5B /* base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		9D1365DF256566450043ED5B /* signup */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365E22565665C0043ED5B /* presentation */,
+				9D1365E1256566560043ED5B /* domain */,
+				9D1365E0256566510043ED5B /* data */,
+			);
+			path = signup;
+			sourceTree = "<group>";
+		};
+		9D1365E0256566510043ED5B /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		9D1365E1256566560043ED5B /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		9D1365E22565665C0043ED5B /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		9D1365E9256566B50043ED5B /* home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		9D1366662565959F0043ED5B /* montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				9D1366712565961C0043ED5B /* Montserrat-Black.otf */,
+				9D1366762565961D0043ED5B /* Montserrat-BlackItalic.otf */,
+				9D13667A2565961D0043ED5B /* Montserrat-Bold.otf */,
+				9D1366742565961D0043ED5B /* Montserrat-BoldItalic.otf */,
+				9D1366772565961D0043ED5B /* Montserrat-ExtraBold.otf */,
+				9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */,
+				9D13666D2565961C0043ED5B /* Montserrat-ExtraLight.otf */,
+				9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */,
+				9D1366792565961D0043ED5B /* Montserrat-Italic.otf */,
+				9D13666C2565961C0043ED5B /* Montserrat-Light.otf */,
+				9D13666E2565961C0043ED5B /* Montserrat-LightItalic.otf */,
+				9D1366752565961D0043ED5B /* Montserrat-Medium.otf */,
+				9D13666F2565961C0043ED5B /* Montserrat-MediumItalic.otf */,
+				9D1366782565961D0043ED5B /* Montserrat-Regular.otf */,
+				9D13666A2565961C0043ED5B /* Montserrat-SemiBold.otf */,
+				9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */,
+				9D1366702565961C0043ED5B /* Montserrat-Thin.otf */,
+				9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */,
+			);
+			path = montserrat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D13653B256559050043ED5B /* ios-base-architecture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D1365662565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architecture" */;
+			buildPhases = (
+				BDC2AD1C2CC908A7E2CD042A /* [CP] Check Pods Manifest.lock */,
+				9D136538256559050043ED5B /* Sources */,
+				9D136539256559050043ED5B /* Frameworks */,
+				9D13653A256559050043ED5B /* Resources */,
+				99A5CA32F47D0F9EDF1E4B98 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-base-architecture";
+			productName = "ios-base-architecture";
+			productReference = 9D13653C256559050043ED5B /* ios-base-architecture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D1365512565590A0043ED5B /* ios-base-architectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D1365692565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architectureTests" */;
+			buildPhases = (
+				7BB282B0C5BC92158596F768 /* [CP] Check Pods Manifest.lock */,
+				9D13654E2565590A0043ED5B /* Sources */,
+				9D13654F2565590A0043ED5B /* Frameworks */,
+				9D1365502565590A0043ED5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D1365542565590A0043ED5B /* PBXTargetDependency */,
+			);
+			name = "ios-base-architectureTests";
+			productName = "ios-base-architectureTests";
+			productReference = 9D1365522565590A0043ED5B /* ios-base-architectureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9D13655C2565590A0043ED5B /* ios-base-architectureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D13656C2565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architectureUITests" */;
+			buildPhases = (
+				D176AA88CE945742A16059C6 /* [CP] Check Pods Manifest.lock */,
+				9D1365592565590A0043ED5B /* Sources */,
+				9D13655A2565590A0043ED5B /* Frameworks */,
+				9D13655B2565590A0043ED5B /* Resources */,
+				58764F5219F112D4A46B2897 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D13655F2565590A0043ED5B /* PBXTargetDependency */,
+			);
+			name = "ios-base-architectureUITests";
+			productName = "ios-base-architectureUITests";
+			productReference = 9D13655D2565590A0043ED5B /* ios-base-architectureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D136534256559050043ED5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					9D13653B256559050043ED5B = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					9D1365512565590A0043ED5B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 9D13653B256559050043ED5B;
+					};
+					9D13655C2565590A0043ED5B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 9D13653B256559050043ED5B;
+					};
+				};
+			};
+			buildConfigurationList = 9D136537256559050043ED5B /* Build configuration list for PBXProject "ios-base-architecture" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D136533256559050043ED5B;
+			productRefGroup = 9D13653D256559050043ED5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D13653B256559050043ED5B /* ios-base-architecture */,
+				9D1365512565590A0043ED5B /* ios-base-architectureTests */,
+				9D13655C2565590A0043ED5B /* ios-base-architectureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D13653A256559050043ED5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1367142565C5AB0043ED5B /* Montserrat-Italic.otf in Resources */,
+				9D1367122565C5AB0043ED5B /* Montserrat-ExtraBold.otf in Resources */,
+				9D13671F2565C5AB0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */,
+				9D13654C256559090043ED5B /* LaunchScreen.storyboard in Resources */,
+				9D1367152565C5AB0043ED5B /* Montserrat-LightItalic.otf in Resources */,
+				9D13670F2565C5AB0043ED5B /* Montserrat-Black.otf in Resources */,
+				9D1367182565C5AB0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */,
+				9D1367102565C5AB0043ED5B /* Montserrat-BlackItalic.otf in Resources */,
+				9D1367172565C5AB0043ED5B /* Montserrat-SemiBold.otf in Resources */,
+				9D1367192565C5AB0043ED5B /* Montserrat-Regular.otf in Resources */,
+				9D13670E2565C5AB0043ED5B /* Montserrat-Thin.otf in Resources */,
+				9D1367112565C5AB0043ED5B /* Montserrat-BoldItalic.otf in Resources */,
+				9D13661D256577D60043ED5B /* Localizable.strings in Resources */,
+				9D13671E2565C5AB0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				9D13671D2565C5AB0043ED5B /* Montserrat-Medium.otf in Resources */,
+				9D1367132565C5AB0043ED5B /* Montserrat-ExtraLight.otf in Resources */,
+				9D136549256559090043ED5B /* Assets.xcassets in Resources */,
+				9D1367162565C5AB0043ED5B /* Montserrat-Bold.otf in Resources */,
+				9D13671A2565C5AB0043ED5B /* Montserrat-Light.otf in Resources */,
+				9D13671B2565C5AB0043ED5B /* Montserrat-MediumItalic.otf in Resources */,
+				9D13671C2565C5AB0043ED5B /* Montserrat-ThinItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D1365502565590A0043ED5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1366AD2565961E0043ED5B /* Montserrat-Bold.otf in Resources */,
+				9D1366A42565961E0043ED5B /* Montserrat-ExtraBold.otf in Resources */,
+				9D1366862565961E0043ED5B /* Montserrat-ExtraLight.otf in Resources */,
+				9D13669E2565961E0043ED5B /* Montserrat-Medium.otf in Resources */,
+				9D13668C2565961E0043ED5B /* Montserrat-MediumItalic.otf in Resources */,
+				9D1366982565961E0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */,
+				9D13668F2565961E0043ED5B /* Montserrat-Thin.otf in Resources */,
+				9D1366A12565961E0043ED5B /* Montserrat-BlackItalic.otf in Resources */,
+				9D13669B2565961E0043ED5B /* Montserrat-BoldItalic.otf in Resources */,
+				9D1366A72565961E0043ED5B /* Montserrat-Regular.otf in Resources */,
+				9D1366802565961E0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				9D1366922565961E0043ED5B /* Montserrat-Black.otf in Resources */,
+				9D13667D2565961E0043ED5B /* Montserrat-SemiBold.otf in Resources */,
+				9D1366892565961E0043ED5B /* Montserrat-LightItalic.otf in Resources */,
+				9D1366832565961E0043ED5B /* Montserrat-Light.otf in Resources */,
+				9D1366B02565961E0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */,
+				9D1366AA2565961E0043ED5B /* Montserrat-Italic.otf in Resources */,
+				9D1366952565961E0043ED5B /* Montserrat-ThinItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D13655B2565590A0043ED5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1366AE2565961E0043ED5B /* Montserrat-Bold.otf in Resources */,
+				9D1366A52565961E0043ED5B /* Montserrat-ExtraBold.otf in Resources */,
+				9D1366872565961E0043ED5B /* Montserrat-ExtraLight.otf in Resources */,
+				9D13669F2565961E0043ED5B /* Montserrat-Medium.otf in Resources */,
+				9D13668D2565961E0043ED5B /* Montserrat-MediumItalic.otf in Resources */,
+				9D1366992565961E0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */,
+				9D1366902565961E0043ED5B /* Montserrat-Thin.otf in Resources */,
+				9D1366A22565961E0043ED5B /* Montserrat-BlackItalic.otf in Resources */,
+				9D13669C2565961E0043ED5B /* Montserrat-BoldItalic.otf in Resources */,
+				9D1366A82565961E0043ED5B /* Montserrat-Regular.otf in Resources */,
+				9D1366812565961E0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				9D1366932565961E0043ED5B /* Montserrat-Black.otf in Resources */,
+				9D13667E2565961E0043ED5B /* Montserrat-SemiBold.otf in Resources */,
+				9D13668A2565961E0043ED5B /* Montserrat-LightItalic.otf in Resources */,
+				9D1366842565961E0043ED5B /* Montserrat-Light.otf in Resources */,
+				9D1366B12565961E0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */,
+				9D1366AB2565961E0043ED5B /* Montserrat-Italic.otf in Resources */,
+				9D1366962565961E0043ED5B /* Montserrat-ThinItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58764F5219F112D4A46B2897 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture-ios-base-architectureUITests/Pods-ios-base-architecture-ios-base-architectureUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture-ios-base-architectureUITests/Pods-ios-base-architecture-ios-base-architectureUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture-ios-base-architectureUITests/Pods-ios-base-architecture-ios-base-architectureUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BB282B0C5BC92158596F768 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-base-architectureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99A5CA32F47D0F9EDF1E4B98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDC2AD1C2CC908A7E2CD042A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-base-architecture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D176AA88CE945742A16059C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-base-architecture-ios-base-architectureUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D136538256559050043ED5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1366C92565AB4C0043ED5B /* DefaultTextField.swift in Sources */,
+				9D1365A3256561300043ED5B /* LoginView.swift in Sources */,
+				9D13658A25655D9B0043ED5B /* Dimensions.swift in Sources */,
+				9D136540256559050043ED5B /* AppDelegate.swift in Sources */,
+				9D13659325655EF80043ED5B /* LoginViewController.swift in Sources */,
+				9D1365BE256563070043ED5B /* LoginRequestModel.swift in Sources */,
+				9D1365C32565631C0043ED5B /* LoginResponseModel.swift in Sources */,
+				9D1365A8256561D30043ED5B /* LoginApi.swift in Sources */,
+				9D1365F625656CCA0043ED5B /* ColorPallete.swift in Sources */,
+				9D1366BC2565965A0043ED5B /* FontPallete.swift in Sources */,
+				9D1365C8256563660043ED5B /* LoginViewModel.swift in Sources */,
+				9D136542256559050043ED5B /* SceneDelegate.swift in Sources */,
+				9D1365CD2565638B0043ED5B /* LoginRequestEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D13654E2565590A0043ED5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1366BD2565965A0043ED5B /* FontPallete.swift in Sources */,
+				9D1366CA2565AB4C0043ED5B /* DefaultTextField.swift in Sources */,
+				9D1365572565590A0043ED5B /* ios_base_architectureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D1365592565590A0043ED5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1366BE2565965A0043ED5B /* FontPallete.swift in Sources */,
+				9D1366CB2565AB4C0043ED5B /* DefaultTextField.swift in Sources */,
+				9D1365622565590A0043ED5B /* ios_base_architectureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D1365542565590A0043ED5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D13653B256559050043ED5B /* ios-base-architecture */;
+			targetProxy = 9D1365532565590A0043ED5B /* PBXContainerItemProxy */;
+		};
+		9D13655F2565590A0043ED5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D13653B256559050043ED5B /* ios-base-architecture */;
+			targetProxy = 9D13655E2565590A0043ED5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D13654A256559090043ED5B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D13654B256559090043ED5B /* Base */,
+				9D1365FB2565755E0043ED5B /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D13661B256577D60043ED5B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D13661C256577D60043ED5B /* Base */,
+				9D136621256577EF0043ED5B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D1365642565590A0043ED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9D1365652565590A0043ED5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D1365672565590A0043ED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6FB41033D6C321D177F6DF /* Pods-ios-base-architecture.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architecture/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architecture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D1365682565590A0043ED5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B893A061EE6384F02F63D8FD /* Pods-ios-base-architecture.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architecture/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architecture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9D13656A2565590A0043ED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8959D1AAAD74B81D7ED1FF /* Pods-ios-base-architectureTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architectureTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architectureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-base-architecture.app/ios-base-architecture";
+			};
+			name = Debug;
+		};
+		9D13656B2565590A0043ED5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76975060C584B6C01FC538A8 /* Pods-ios-base-architectureTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architectureTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architectureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-base-architecture.app/ios-base-architecture";
+			};
+			name = Release;
+		};
+		9D13656D2565590A0043ED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 142FAC1FB181766963C53CF9 /* Pods-ios-base-architecture-ios-base-architectureUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architectureUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architectureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-base-architecture";
+			};
+			name = Debug;
+		};
+		9D13656E2565590A0043ED5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCB4EA470D25D1873C68342E /* Pods-ios-base-architecture-ios-base-architectureUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SZG9KNYY3;
+				INFOPLIST_FILE = "ios-base-architectureUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deventurapps.ios-base-architectureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-base-architecture";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D136537256559050043ED5B /* Build configuration list for PBXProject "ios-base-architecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D1365642565590A0043ED5B /* Debug */,
+				9D1365652565590A0043ED5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D1365662565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D1365672565590A0043ED5B /* Debug */,
+				9D1365682565590A0043ED5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D1365692565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D13656A2565590A0043ED5B /* Debug */,
+				9D13656B2565590A0043ED5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D13656C2565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architectureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D13656D2565590A0043ED5B /* Debug */,
+				9D13656E2565590A0043ED5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D136534256559050043ED5B /* Project object */;
+}
