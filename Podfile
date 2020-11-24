@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'ios-base-architecture' do
   use_frameworks!
@@ -10,9 +10,12 @@ target 'ios-base-architecture' do
   pod 'Crashlytics'
   
   #network
-  pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SwiftyJSON'
+  pod 'Moya', '~> 14.0'
+  
+  #DI
+  pod 'Swinject'
   
   #layout
   pod 'SnapKit'

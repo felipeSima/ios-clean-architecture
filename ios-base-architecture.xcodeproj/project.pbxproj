@@ -17,7 +17,6 @@
 		9D13658A25655D9B0043ED5B /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13658925655D9B0043ED5B /* Dimensions.swift */; };
 		9D13659325655EF80043ED5B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13659225655EF80043ED5B /* LoginViewController.swift */; };
 		9D1365A3256561300043ED5B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365A2256561300043ED5B /* LoginView.swift */; };
-		9D1365A8256561D30043ED5B /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365A7256561D30043ED5B /* LoginApi.swift */; };
 		9D1365BE256563070043ED5B /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365BD256563070043ED5B /* LoginRequestModel.swift */; };
 		9D1365C32565631C0043ED5B /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365C22565631C0043ED5B /* LoginResponseModel.swift */; };
 		9D1365C8256563660043ED5B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1365C7256563660043ED5B /* LoginViewModel.swift */; };
@@ -84,6 +83,37 @@
 		9D13671D2565C5AB0043ED5B /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366752565961D0043ED5B /* Montserrat-Medium.otf */; };
 		9D13671E2565C5AB0043ED5B /* Montserrat-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D13666B2565961C0043ED5B /* Montserrat-ExtraBoldItalic.otf */; };
 		9D13671F2565C5AB0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1366732565961D0043ED5B /* Montserrat-ExtraLightItalic.otf */; };
+		9D13676C256880440043ED5B /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13676B256880430043ED5B /* LoginRepository.swift */; };
+		9D13677D256880E10043ED5B /* LoginRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13677C256880E10043ED5B /* LoginRepositoryImp.swift */; };
+		9D1367852568816F0043ED5B /* LoginRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1367842568816F0043ED5B /* LoginRemoteDataSource.swift */; };
+		9D2BE6F4256C036700744D26 /* LoginIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE6F3256C036700744D26 /* LoginIn.swift */; };
+		9D2BE6FC256C037600744D26 /* LoginOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE6FB256C037600744D26 /* LoginOut.swift */; };
+		9D2BE723256C075C00744D26 /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE722256C075C00744D26 /* Failure.swift */; };
+		9D2BE728256C08F100744D26 /* LoginInFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE727256C08F100744D26 /* LoginInFailure.swift */; };
+		9D2BE751256C497D00744D26 /* PokemonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE750256C497D00744D26 /* PokemonListModel.swift */; };
+		9D2BE759256C4A6800744D26 /* PokemonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE758256C4A6800744D26 /* PokemonApi.swift */; };
+		9D2BE763256C4C2800744D26 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE762256C4C2800744D26 /* PokemonModel.swift */; };
+		9D2BE770256C504B00744D26 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE76F256C504B00744D26 /* NetworkManager.swift */; };
+		9D2BE780256C52A200744D26 /* BaseEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE77F256C52A200744D26 /* BaseEnvironment.swift */; };
+		9D2BE807256C655600744D26 /* PokemonList.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BE806256C655600744D26 /* PokemonList.json */; };
+		9D2BE80C256C656800744D26 /* Pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BE80B256C656800744D26 /* Pokemon.json */; };
+		9D2BE815256C6EE500744D26 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE814256C6EE500744D26 /* PokemonListViewController.swift */; };
+		9D2BE82C256C9D9F00744D26 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE82B256C9D9E00744D26 /* PokemonDetailViewController.swift */; };
+		9D2BE833256CA2D300744D26 /* SearchPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE832256CA2D300744D26 /* SearchPokemonViewController.swift */; };
+		9D2BE83B256CB0EB00744D26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE83A256CB0EB00744D26 /* MainViewController.swift */; };
+		9D2BE849256D4ABE00744D26 /* DepedencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BE848256D4ABE00744D26 /* DepedencyInjection.swift */; };
+		9D788F31256D5F680046406B /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F30256D5F680046406B /* BaseApi.swift */; };
+		9D788F36256D61550046406B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F35256D61550046406B /* BaseService.swift */; };
+		9D788F43256D63500046406B /* PokemonListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F42256D63500046406B /* PokemonListRepository.swift */; };
+		9D788F48256D63870046406B /* GetPokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F47256D63870046406B /* GetPokemonList.swift */; };
+		9D788F50256D69180046406B /* BaseMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F4F256D69180046406B /* BaseMoyaProvider.swift */; };
+		9D788F61256D6F4F0046406B /* PokemonListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F60256D6F4F0046406B /* PokemonListRepositoryImpl.swift */; };
+		9D788F66256D8AC60046406B /* PokemonListRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F65256D8AC60046406B /* PokemonListRemoteDatasource.swift */; };
+		9D788F6B256D8E200046406B /* PokemonListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F6A256D8E200046406B /* PokemonListEntity.swift */; };
+		9D788F75256DA24E0046406B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F74256DA24C0046406B /* RealmManager.swift */; };
+		9D788F7A256DA2CF0046406B /* PokemonListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788F79256DA2CF0046406B /* PokemonListObject.swift */; };
+		9D788FA8256DA5B70046406B /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788FA7256DA5B70046406B /* PokemonListViewModel.swift */; };
+		9D788FAD256DA5CE0046406B /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788FAC256DA5CE0046406B /* PokemonListView.swift */; };
 		DB73DFDB24D65BCBEB8AEDDB /* Pods_ios_base_architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F5E890E8B870424BB404D3 /* Pods_ios_base_architecture.framework */; };
 		E74D0D79C34BC8D51DB89DCC /* Pods_ios_base_architecture_ios_base_architectureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08EFEC7E6B747B315F2D1DD /* Pods_ios_base_architecture_ios_base_architectureUITests.framework */; };
 /* End PBXBuildFile section */
@@ -125,7 +155,6 @@
 		9D13658925655D9B0043ED5B /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		9D13659225655EF80043ED5B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D1365A2256561300043ED5B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		9D1365A7256561D30043ED5B /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		9D1365BD256563070043ED5B /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		9D1365C22565631C0043ED5B /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		9D1365C7256563660043ED5B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -154,6 +183,37 @@
 		9D13667B2565961D0043ED5B /* Montserrat-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		9D1366BB2565965A0043ED5B /* FontPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPallete.swift; sourceTree = "<group>"; };
 		9D1366C82565AB4C0043ED5B /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		9D13676B256880430043ED5B /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		9D13677C256880E10043ED5B /* LoginRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImp.swift; sourceTree = "<group>"; };
+		9D1367842568816F0043ED5B /* LoginRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataSource.swift; sourceTree = "<group>"; };
+		9D2BE6F3256C036700744D26 /* LoginIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIn.swift; sourceTree = "<group>"; };
+		9D2BE6FB256C037600744D26 /* LoginOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOut.swift; sourceTree = "<group>"; };
+		9D2BE722256C075C00744D26 /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		9D2BE727256C08F100744D26 /* LoginInFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInFailure.swift; sourceTree = "<group>"; };
+		9D2BE750256C497D00744D26 /* PokemonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModel.swift; sourceTree = "<group>"; };
+		9D2BE758256C4A6800744D26 /* PokemonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApi.swift; sourceTree = "<group>"; };
+		9D2BE762256C4C2800744D26 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		9D2BE76F256C504B00744D26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9D2BE77F256C52A200744D26 /* BaseEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEnvironment.swift; sourceTree = "<group>"; };
+		9D2BE806256C655600744D26 /* PokemonList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokemonList.json; sourceTree = "<group>"; };
+		9D2BE80B256C656800744D26 /* Pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pokemon.json; sourceTree = "<group>"; };
+		9D2BE814256C6EE500744D26 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
+		9D2BE82B256C9D9E00744D26 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		9D2BE832256CA2D300744D26 /* SearchPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonViewController.swift; sourceTree = "<group>"; };
+		9D2BE83A256CB0EB00744D26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9D2BE848256D4ABE00744D26 /* DepedencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepedencyInjection.swift; sourceTree = "<group>"; };
+		9D788F30256D5F680046406B /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		9D788F35256D61550046406B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		9D788F42256D63500046406B /* PokemonListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRepository.swift; sourceTree = "<group>"; };
+		9D788F47256D63870046406B /* GetPokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonList.swift; sourceTree = "<group>"; };
+		9D788F4F256D69180046406B /* BaseMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMoyaProvider.swift; sourceTree = "<group>"; };
+		9D788F60256D6F4F0046406B /* PokemonListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRepositoryImpl.swift; sourceTree = "<group>"; };
+		9D788F65256D8AC60046406B /* PokemonListRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRemoteDatasource.swift; sourceTree = "<group>"; };
+		9D788F6A256D8E200046406B /* PokemonListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListEntity.swift; sourceTree = "<group>"; };
+		9D788F74256DA24C0046406B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9D788F79256DA2CF0046406B /* PokemonListObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListObject.swift; sourceTree = "<group>"; };
+		9D788FA7256DA5B70046406B /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
+		9D788FAC256DA5CE0046406B /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
 		B893A061EE6384F02F63D8FD /* Pods-ios-base-architecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-architecture.release.xcconfig"; path = "Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture.release.xcconfig"; sourceTree = "<group>"; };
 		C7F00F647347E0316C53A916 /* Pods_ios_base_architectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_architectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08EFEC7E6B747B315F2D1DD /* Pods_ios_base_architecture_ios_base_architectureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_architecture_ios_base_architectureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				9D136572256559E90043ED5B /* core */,
-				9D13657525655A290043ED5B /* environment */,
 				9D13657625655A3B0043ED5B /* ui */,
 				9D13657425655A200043ED5B /* features */,
 				9D13653F256559050043ED5B /* AppDelegate.swift */,
@@ -272,6 +331,8 @@
 		9D136572256559E90043ED5B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE83F256D47C000744D26 /* di */,
+				9D13657525655A290043ED5B /* Network */,
 				9D1365D8256565840043ED5B /* base */,
 				9D1365D1256563DE0043ED5B /* session */,
 				9D13657725655A650043ED5B /* api */,
@@ -286,17 +347,19 @@
 		9D13657425655A200043ED5B /* features */ = {
 			isa = PBXGroup;
 			children = (
-				9D13658E25655E4C0043ED5B /* authentication */,
-				9D1365E9256566B50043ED5B /* home */,
+				9D2BE819256C8B9C00744D26 /* main */,
+				9D1365DF256566450043ED5B /* pokemon */,
+				9D13659A256560920043ED5B /* login */,
 			);
 			path = features;
 			sourceTree = "<group>";
 		};
-		9D13657525655A290043ED5B /* environment */ = {
+		9D13657525655A290043ED5B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE76F256C504B00744D26 /* NetworkManager.swift */,
 			);
-			path = environment;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9D13657625655A3B0043ED5B /* ui */ = {
@@ -313,6 +376,10 @@
 		9D13657725655A650043ED5B /* api */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE810256C657000744D26 /* StubbedResponses */,
+				9D788F30256D5F680046406B /* BaseApi.swift */,
+				9D788F35256D61550046406B /* BaseService.swift */,
+				9D788F4F256D69180046406B /* BaseMoyaProvider.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -320,6 +387,7 @@
 		9D13657825655B530043ED5B /* database */ = {
 			isa = PBXGroup;
 			children = (
+				9D788F74256DA24C0046406B /* RealmManager.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -327,6 +395,7 @@
 		9D13658325655BF00043ED5B /* enum */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE77F256C52A200744D26 /* BaseEnvironment.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -370,22 +439,12 @@
 			path = components;
 			sourceTree = "<group>";
 		};
-		9D13658E25655E4C0043ED5B /* authentication */ = {
-			isa = PBXGroup;
-			children = (
-				9D1365DF256566450043ED5B /* signup */,
-				9D13659A256560920043ED5B /* login */,
-				9D13659E2565609E0043ED5B /* forget_password */,
-			);
-			path = authentication;
-			sourceTree = "<group>";
-		};
 		9D13658F25655ECA0043ED5B /* data */ = {
 			isa = PBXGroup;
 			children = (
-				9D1365A7256561D30043ED5B /* LoginApi.swift */,
-				9D1365BD256563070043ED5B /* LoginRequestModel.swift */,
-				9D1365C22565631C0043ED5B /* LoginResponseModel.swift */,
+				9D136775256880B60043ED5B /* model */,
+				9D136774256880AB0043ED5B /* repository */,
+				9D136773256880550043ED5B /* datasource */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -393,8 +452,9 @@
 		9D13659025655ED30043ED5B /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				9D1365C7256563660043ED5B /* LoginViewModel.swift */,
-				9D1365CC2565638B0043ED5B /* LoginRequestEntity.swift */,
+				9D13676A25687FF50043ED5B /* repository */,
+				9D13676925687FE50043ED5B /* entity */,
+				9D13676825687FDA0043ED5B /* usecase */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -402,6 +462,7 @@
 		9D13659125655ED80043ED5B /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9D1365C7256563660043ED5B /* LoginViewModel.swift */,
 				9D13659225655EF80043ED5B /* LoginViewController.swift */,
 				9D1365A2256561300043ED5B /* LoginView.swift */,
 			);
@@ -418,19 +479,20 @@
 			path = login;
 			sourceTree = "<group>";
 		};
-		9D13659E2565609E0043ED5B /* forget_password */ = {
+		9D13659E2565609E0043ED5B /* detail */ = {
 			isa = PBXGroup;
 			children = (
 				9D1365A02565610B0043ED5B /* data */,
 				9D1365A1256561110043ED5B /* domain */,
 				9D13659F256561020043ED5B /* presentation */,
 			);
-			path = forget_password;
+			path = detail;
 			sourceTree = "<group>";
 		};
 		9D13659F256561020043ED5B /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE82B256C9D9E00744D26 /* PokemonDetailViewController.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -438,6 +500,9 @@
 		9D1365A02565610B0043ED5B /* data */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE761256C4C1500744D26 /* repository */,
+				9D2BE760256C4C0E00744D26 /* datasource */,
+				9D2BE75F256C4C0600744D26 /* model */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -459,23 +524,27 @@
 		9D1365D8256565840043ED5B /* base */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE722256C075C00744D26 /* Failure.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
 		};
-		9D1365DF256566450043ED5B /* signup */ = {
+		9D1365DF256566450043ED5B /* pokemon */ = {
 			isa = PBXGroup;
 			children = (
-				9D1365E22565665C0043ED5B /* presentation */,
-				9D1365E1256566560043ED5B /* domain */,
-				9D1365E0256566510043ED5B /* data */,
+				9D2BE830256C9E6900744D26 /* search */,
+				9D2BE75E256C4BF200744D26 /* list */,
+				9D13659E2565609E0043ED5B /* detail */,
 			);
-			path = signup;
+			path = pokemon;
 			sourceTree = "<group>";
 		};
 		9D1365E0256566510043ED5B /* data */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE74F256C496D00744D26 /* repository */,
+				9D2BE74E256C496700744D26 /* datasource */,
+				9D2BE74D256C496000744D26 /* models */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -483,6 +552,9 @@
 		9D1365E1256566560043ED5B /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				9D788F41256D63220046406B /* entity */,
+				9D788F40256D63190046406B /* usecase */,
+				9D788F3F256D63110046406B /* repository */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -490,15 +562,11 @@
 		9D1365E22565665C0043ED5B /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9D2BE814256C6EE500744D26 /* PokemonListViewController.swift */,
+				9D788FA7256DA5B70046406B /* PokemonListViewModel.swift */,
+				9D788FAC256DA5CE0046406B /* PokemonListView.swift */,
 			);
 			path = presentation;
-			sourceTree = "<group>";
-		};
-		9D1365E9256566B50043ED5B /* home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = home;
 			sourceTree = "<group>";
 		};
 		9D1366662565959F0043ED5B /* montserrat */ = {
@@ -524,6 +592,188 @@
 				9D1366722565961C0043ED5B /* Montserrat-ThinItalic.otf */,
 			);
 			path = montserrat;
+			sourceTree = "<group>";
+		};
+		9D13676825687FDA0043ED5B /* usecase */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE6F3256C036700744D26 /* LoginIn.swift */,
+				9D2BE6FB256C037600744D26 /* LoginOut.swift */,
+				9D2BE727256C08F100744D26 /* LoginInFailure.swift */,
+			);
+			path = usecase;
+			sourceTree = "<group>";
+		};
+		9D13676925687FE50043ED5B /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365CC2565638B0043ED5B /* LoginRequestEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		9D13676A25687FF50043ED5B /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D13676B256880430043ED5B /* LoginRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		9D136773256880550043ED5B /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				9D1367842568816F0043ED5B /* LoginRemoteDataSource.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		9D136774256880AB0043ED5B /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D13677C256880E10043ED5B /* LoginRepositoryImp.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		9D136775256880B60043ED5B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365C22565631C0043ED5B /* LoginResponseModel.swift */,
+				9D1365BD256563070043ED5B /* LoginRequestModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9D2BE74D256C496000744D26 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE750256C497D00744D26 /* PokemonListModel.swift */,
+				9D788F79256DA2CF0046406B /* PokemonListObject.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		9D2BE74E256C496700744D26 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE758256C4A6800744D26 /* PokemonApi.swift */,
+				9D788F65256D8AC60046406B /* PokemonListRemoteDatasource.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		9D2BE74F256C496D00744D26 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D788F60256D6F4F0046406B /* PokemonListRepositoryImpl.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		9D2BE75E256C4BF200744D26 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				9D1365E22565665C0043ED5B /* presentation */,
+				9D1365E1256566560043ED5B /* domain */,
+				9D1365E0256566510043ED5B /* data */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		9D2BE75F256C4C0600744D26 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE762256C4C2800744D26 /* PokemonModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9D2BE760256C4C0E00744D26 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		9D2BE761256C4C1500744D26 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		9D2BE810256C657000744D26 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE806256C655600744D26 /* PokemonList.json */,
+				9D2BE80B256C656800744D26 /* Pokemon.json */,
+			);
+			path = StubbedResponses;
+			sourceTree = "<group>";
+		};
+		9D2BE819256C8B9C00744D26 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE81A256C8BA800744D26 /* presentation */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		9D2BE81A256C8BA800744D26 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE83A256CB0EB00744D26 /* MainViewController.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		9D2BE830256C9E6900744D26 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE831256C9E7200744D26 /* presentation */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		9D2BE831256C9E7200744D26 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE832256CA2D300744D26 /* SearchPokemonViewController.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		9D2BE83F256D47C000744D26 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BE848256D4ABE00744D26 /* DepedencyInjection.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		9D788F3F256D63110046406B /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D788F42256D63500046406B /* PokemonListRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		9D788F40256D63190046406B /* usecase */ = {
+			isa = PBXGroup;
+			children = (
+				9D788F47256D63870046406B /* GetPokemonList.swift */,
+			);
+			path = usecase;
+			sourceTree = "<group>";
+		};
+		9D788F41256D63220046406B /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				9D788F6A256D8E200046406B /* PokemonListEntity.swift */,
+			);
+			path = entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +893,7 @@
 				9D1367182565C5AB0043ED5B /* Montserrat-SemiBoldItalic.otf in Resources */,
 				9D1367102565C5AB0043ED5B /* Montserrat-BlackItalic.otf in Resources */,
 				9D1367172565C5AB0043ED5B /* Montserrat-SemiBold.otf in Resources */,
+				9D2BE80C256C656800744D26 /* Pokemon.json in Resources */,
 				9D1367192565C5AB0043ED5B /* Montserrat-Regular.otf in Resources */,
 				9D13670E2565C5AB0043ED5B /* Montserrat-Thin.otf in Resources */,
 				9D1367112565C5AB0043ED5B /* Montserrat-BoldItalic.otf in Resources */,
@@ -651,6 +902,7 @@
 				9D13671D2565C5AB0043ED5B /* Montserrat-Medium.otf in Resources */,
 				9D1367132565C5AB0043ED5B /* Montserrat-ExtraLight.otf in Resources */,
 				9D136549256559090043ED5B /* Assets.xcassets in Resources */,
+				9D2BE807256C655600744D26 /* PokemonList.json in Resources */,
 				9D1367162565C5AB0043ED5B /* Montserrat-Bold.otf in Resources */,
 				9D13671A2565C5AB0043ED5B /* Montserrat-Light.otf in Resources */,
 				9D13671B2565C5AB0043ED5B /* Montserrat-MediumItalic.otf in Resources */,
@@ -818,18 +1070,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2BE770256C504B00744D26 /* NetworkManager.swift in Sources */,
 				9D1366C92565AB4C0043ED5B /* DefaultTextField.swift in Sources */,
+				9D13677D256880E10043ED5B /* LoginRepositoryImp.swift in Sources */,
+				9D788FAD256DA5CE0046406B /* PokemonListView.swift in Sources */,
 				9D1365A3256561300043ED5B /* LoginView.swift in Sources */,
+				9D2BE751256C497D00744D26 /* PokemonListModel.swift in Sources */,
+				9D788F43256D63500046406B /* PokemonListRepository.swift in Sources */,
 				9D13658A25655D9B0043ED5B /* Dimensions.swift in Sources */,
+				9D1367852568816F0043ED5B /* LoginRemoteDataSource.swift in Sources */,
+				9D2BE83B256CB0EB00744D26 /* MainViewController.swift in Sources */,
+				9D2BE728256C08F100744D26 /* LoginInFailure.swift in Sources */,
+				9D2BE82C256C9D9F00744D26 /* PokemonDetailViewController.swift in Sources */,
+				9D788F75256DA24E0046406B /* RealmManager.swift in Sources */,
+				9D13676C256880440043ED5B /* LoginRepository.swift in Sources */,
 				9D136540256559050043ED5B /* AppDelegate.swift in Sources */,
+				9D788F61256D6F4F0046406B /* PokemonListRepositoryImpl.swift in Sources */,
+				9D788F6B256D8E200046406B /* PokemonListEntity.swift in Sources */,
+				9D788F50256D69180046406B /* BaseMoyaProvider.swift in Sources */,
 				9D13659325655EF80043ED5B /* LoginViewController.swift in Sources */,
+				9D788F66256D8AC60046406B /* PokemonListRemoteDatasource.swift in Sources */,
+				9D2BE6F4256C036700744D26 /* LoginIn.swift in Sources */,
+				9D788F7A256DA2CF0046406B /* PokemonListObject.swift in Sources */,
 				9D1365BE256563070043ED5B /* LoginRequestModel.swift in Sources */,
+				9D2BE833256CA2D300744D26 /* SearchPokemonViewController.swift in Sources */,
+				9D2BE815256C6EE500744D26 /* PokemonListViewController.swift in Sources */,
+				9D2BE759256C4A6800744D26 /* PokemonApi.swift in Sources */,
+				9D2BE763256C4C2800744D26 /* PokemonModel.swift in Sources */,
+				9D2BE723256C075C00744D26 /* Failure.swift in Sources */,
+				9D2BE780256C52A200744D26 /* BaseEnvironment.swift in Sources */,
 				9D1365C32565631C0043ED5B /* LoginResponseModel.swift in Sources */,
-				9D1365A8256561D30043ED5B /* LoginApi.swift in Sources */,
+				9D788F48256D63870046406B /* GetPokemonList.swift in Sources */,
 				9D1365F625656CCA0043ED5B /* ColorPallete.swift in Sources */,
+				9D788F31256D5F680046406B /* BaseApi.swift in Sources */,
+				9D2BE6FC256C037600744D26 /* LoginOut.swift in Sources */,
 				9D1366BC2565965A0043ED5B /* FontPallete.swift in Sources */,
+				9D788F36256D61550046406B /* BaseService.swift in Sources */,
 				9D1365C8256563660043ED5B /* LoginViewModel.swift in Sources */,
+				9D2BE849256D4ABE00744D26 /* DepedencyInjection.swift in Sources */,
 				9D136542256559050043ED5B /* SceneDelegate.swift in Sources */,
+				9D788FA8256DA5B70046406B /* PokemonListViewModel.swift in Sources */,
 				9D1365CD2565638B0043ED5B /* LoginRequestEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
