@@ -7,7 +7,6 @@
 
 import UIKit
 import TextFieldEffects
-import SnapKit
 
 class DefaultTextField: HoshiTextField {
     

@@ -22,7 +22,7 @@ target 'ios-base-architecture' do
   
   #ui
   pod 'TextFieldEffects'
-  pod "SkeletonView"
+  pod 'SkeletonView'
   pod 'DropDown'
   
   #local database
