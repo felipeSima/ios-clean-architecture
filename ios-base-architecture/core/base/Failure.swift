@@ -17,7 +17,7 @@ protocol Failure: Error {
     var code: String {get set}
 }
 
-class ServerConnectionFailure: Failure {
+struct ServerConnectionFailure: Failure {
     var error: Int
     var code: String
     
@@ -27,7 +27,7 @@ class ServerConnectionFailure: Failure {
     }
 }
 
-class InvalidParamFailure: Failure {
+struct InvalidParamFailure: Failure {
     var error: Int
     var code: String
     

@@ -21,23 +21,38 @@ class PokemonListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy var imageLogo: UIImageView = {
+       let imageView  = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "logoView")
+        return imageView
+    }()
+    
     lazy var titleHeaderView: TitleHeaderView = {
        let label = TitleHeaderView()
         label.alignment = .center
-        label.title = NSLocalizedString("pokemon_list_title", comment: "")
-        label.subtitle = "by Afya"
+        label.bottomItem = imageLogo
+        label.titleLabel.textColor = .yellow
+        label.subtitleLabel.textColor = .yellow
+        imageLogo.snp.makeConstraints{ make in
+            make.edges.equalToSuperview().inset(10)
+        }
         return label
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         tableView.tableFooterView = UIView()
         tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
+        /*
         tableView.tableHeaderView = titleHeaderView
         titleHeaderView.snp.makeConstraints { make in
             make.width.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
+ */
         return tableView
     }()
     

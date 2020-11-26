@@ -11,15 +11,20 @@ import Foundation
 
 class PokemonListRepositoryImpl: PokemonListRepository {
     
+    
     let datasource: PokemonListRemoteDatasource
     
     init(datasource: PokemonListRemoteDatasource){
         self.datasource = datasource
     }
     
-    func getPokemonsList(completion: @escaping (PokemonListEntity) -> (), failure: @escaping (ServerError) -> ()) {
+    func getPokemonsList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
         
         //Verify if is cached case not in cache get from
         datasource.getPokemonsList(completion: completion, failure: failure)
+    }
+    
+    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()){
+        datasource.getPokemon(name: name, completion: completion, failure: failure)
     }
 }

@@ -10,6 +10,10 @@ import Swinject
 
 class DepedencyInjection {
     
+    /**
+     The container constant is the responsible parameter to handle the Dependency injection in the project.
+     */
+    
     static let container: Container = {
         let container = Container()
         container.register(PokemonListRemoteDatasource.self) { r in PokemonListRemoteDatasourceImpl()}

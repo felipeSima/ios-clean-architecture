@@ -11,13 +11,12 @@ import SkeletonView
 
 class PokemonListViewController: UIViewController {
 
-    var usecase: GetPokemonList?
+    var viewModel: PokemonListViewModel
     var pokemonView = PokemonListView()
-    var pokemon = [Pokemon]()
     
     init(usecase: GetPokemonList) {
+        self.viewModel = PokemonListViewModel(usecase: usecase)
         super.init(nibName: nil, bundle: nil)
-        self.usecase = usecase
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +32,11 @@ class PokemonListViewController: UIViewController {
     }
     
     func setupController(){
-        self.view.backgroundColor = .white
+        self.navigationItem.titleView = AppearanceUtils.GetLogoImage()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
     
     func layoutComponents(){
@@ -51,17 +54,15 @@ class PokemonListViewController: UIViewController {
     func getData() {
         DispatchQueue.main.async {
             self.pokemonView.tableView.showAnimatedSkeleton()
-            self.usecase?.getPokemonList(completion: self.handleSuccess, failure: self.handleError)
+            self.viewModel.getPokemonList(onComplete: self.handleSuccess, onFailure: self.handleError)
         }
     }
     
-    func handleSuccess(_ pokemonList: PokemonListEntity){
+    func handleSuccess(_ pokemonList: [PokemonListEntity]){
         DispatchQueue.main.async {
             self.pokemonView.tableView.hideSkeleton()
-            self.pokemon.append(contentsOf: pokemonList.results)
             self.pokemonView.tableView.reloadData()
         }
-        print(pokemonList)
     }
     
     func handleError(_ error: ServerError){
@@ -69,24 +70,26 @@ class PokemonListViewController: UIViewController {
             self.pokemonView.tableView.hideSkeleton()
             self.pokemonView.tableView.reloadData()
         }
-        print(error.errorMessage ?? "Unknown error")
     }
 
 }
 
 extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemon.count
+        return self.viewModel.pokemons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
-        cell.set(title: pokemon[indexPath.row].name, subTitle: "\(indexPath.row)")
+        cell.set(serie: "No. \(indexPath.row)", pokemon: self.viewModel.pokemons[indexPath.row])
         return cell
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
        return "cell"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     

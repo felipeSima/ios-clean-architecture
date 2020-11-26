@@ -20,11 +20,7 @@ struct PokemonListModel: Codable {
         self.previous = previous
         self.results = results
     }
-    
-    @discardableResult
-    func convertToEntity() -> PokemonListEntity{
-        return PokemonListEntity(count: self.count, next: self.next, previous: self.previous, results: self.results)
-    }
+
 }
 
 // MARK: - Pokemon
