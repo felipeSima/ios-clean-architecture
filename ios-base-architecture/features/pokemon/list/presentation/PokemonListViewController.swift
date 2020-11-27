@@ -11,11 +11,13 @@ import SkeletonView
 
 class PokemonListViewController: UIViewController {
 
+    var container: Container
     var viewModel: PokemonListViewModel
     var pokemonView = PokemonListView()
     
-    init(usecase: GetPokemonList) {
-        self.viewModel = PokemonListViewModel(usecase: usecase)
+    init(container: Container) {
+        self.container = container
+        self.viewModel = PokemonListViewModel(usecase: container.resolve(GetPokemonList.self)!)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,14 +27,15 @@ class PokemonListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupController()
+        setNavigationController()
         layoutComponents()
         setDelegation()
         getData()
     }
     
-    func setupController(){
-        self.navigationItem.titleView = AppearanceUtils.GetLogoImage()
+    func setNavigationController(){
+        navigationItem.titleView = AppearanceUtils.GetLogoImage()
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -90,6 +93,8 @@ extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = PokemonDetailViewController(pokemon: viewModel.pokemons[indexPath.row], container: container)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     

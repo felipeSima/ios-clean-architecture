@@ -46,13 +46,6 @@ class PokemonListView: UIView {
         tableView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         tableView.tableFooterView = UIView()
         tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
-        /*
-        tableView.tableHeaderView = titleHeaderView
-        titleHeaderView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
- */
         return tableView
     }()
     

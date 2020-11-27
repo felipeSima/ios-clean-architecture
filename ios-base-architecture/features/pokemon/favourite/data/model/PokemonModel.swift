@@ -15,6 +15,11 @@ struct PokemonModel: Codable {
     let weight: Int
     let base_experience: Int
     let sprites: Sprites
+    
+    @discardableResult
+    func convertToEntity() -> PokemonListEntity {
+        return PokemonListEntity(name: self.name, imageUrl: self.sprites.front_default)
+    }
 }
 
 struct Sprites: Codable {

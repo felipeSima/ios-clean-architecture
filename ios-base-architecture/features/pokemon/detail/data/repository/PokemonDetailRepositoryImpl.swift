@@ -9,10 +9,10 @@ import Foundation
 
 struct PokemonDetailRepositoryImpl: PokemonDetailRepository {
     
-    let datasource: PokemonDetailDatasource
+    let datasource: PokemonDetailRemoteDatasource
     
-    func getPokemonDetail(name: String, _ completion: @escaping (PokemonModel) -> Void, _ failure: @escaping (ServerError) -> Void) {
-        //datasource.getPokemonDetail(completion, failure)
+    func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
+        datasource.getPokemonDetail(name: name, completion, failure)
     }
     
 }

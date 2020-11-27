@@ -10,11 +10,12 @@ import Swinject
 
 class PokemonDetailViewController: UIViewController {
 
-    var container: Container!
+    var viewModel: PokemonDetailViewModel
+    let pokemonDetailView = PokemonDetailView()
     
-    init(container: Container) {
+    init(pokemon: PokemonListEntity, container: Container){
+        self.viewModel = PokemonDetailViewModel(pokemon: pokemon, usecase: container.resolve(GetPokemonDetail.self)!)
         super.init(nibName: nil, bundle: nil)
-        self.container = container
     }
     
     required init?(coder: NSCoder) {
@@ -23,7 +24,39 @@ class PokemonDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .orange
+        setNavigationController()
+        layoutView()
+        getData()
+    }
+    
+    func setNavigationController(){
+        navigationItem.titleView = AppearanceUtils.GetLogoImage()
+        navigationItem.hidesSearchBarWhenScrolling = true
+        self.view.backgroundColor = .white
+    }
+    
+    func layoutView(){
+        self.view.addSubview(pokemonDetailView)
+        pokemonDetailView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    func getData(){
+        //pokemonDetailView.set(viewModel.pokemon)
+        
+        DispatchQueue.main.async {
+            self.viewModel.getPokemonDetail(self.handleSuccess, self.handleFailure)
+        }
+ 
+    }
+    
+    func handleSuccess(_ pokemon: PokemonListEntity){
+        pokemonDetailView.set(pokemon)
+    }
+    
+    func handleFailure(_ failure: ServerError){
+        print("DEU RUIM PARCEIRO")
     }
 
 }

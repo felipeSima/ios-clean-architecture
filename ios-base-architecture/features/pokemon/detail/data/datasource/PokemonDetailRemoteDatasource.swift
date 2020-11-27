@@ -8,18 +8,18 @@
 import Foundation
 import Moya
 
-protocol PokemonDetailDatasource: BaseService<PokemonApi> {
-    func getPokemonDetail(name: String, _ completion: @escaping (PokemonModel) -> Void, _ failure: @escaping (ServerError) -> Void)
+protocol PokemonDetailRemoteDatasource: BaseService<PokemonApi> {
+    func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void)
 }
 
-class PokemonDetailDatasourceImpl: BaseService<PokemonApi>, PokemonDetailDatasource {
-    func getPokemonDetail(name: String, _ completion: @escaping (PokemonModel) -> Void, _ failure: @escaping (ServerError) -> Void) {
+class PokemonDetailRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonDetailRemoteDatasource {
+    func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
         provider.request(.getPokemonByName(name: name)) { result in
             switch result{
             case let .success(response):
                 do{
                     let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
-                    completion(results)
+                    completion(results.convertToEntity())
                 }catch let err{
                     print(err)
                 }

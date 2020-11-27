@@ -9,12 +9,12 @@ import Foundation
 
 class FavouritesViewModel {
     
-    /*
-    var usecase: GetPokemonDetail
+    var usecase: GetPokemonList
     
-    init(usecase: GetPokemonDetail){
+    var pokemons = [PokemonListEntity]()
+    
+    init(usecase: GetPokemonList){
         self.usecase = usecase
-        super.init()
     }
-    */
+    
 }

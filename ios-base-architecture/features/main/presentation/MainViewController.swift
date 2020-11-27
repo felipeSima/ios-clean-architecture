@@ -26,16 +26,16 @@ class MainViewController: UITabBarController {
         
         guard let container = container else {return}
         
-        let listViewController = UINavigationController(rootViewController: container.resolve(PokemonListViewController.self)!)
-        listViewController.navigationBar.barStyle = .black
+        let listViewController = UINavigationController(rootViewController: PokemonListViewController(container: container))
+        //listViewController.navigationBar.barStyle = .black
         listViewController.tabBarItem = UITabBarItem(title: "Lista", image: UIImage(named: "outline_list_black_24pt_1x"), tag: 0)
         
-        let searchViewController = UINavigationController(rootViewController: PokemonDetailViewController(container: container))
-        searchViewController.navigationBar.barStyle = .black
+        let searchViewController = UINavigationController(rootViewController: FavouritesViewController(container: container))
+        //searchViewController.navigationBar.barStyle = .black
         searchViewController.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(named: "outline_system_update_black_24pt_1x"), tag: 1)
         
         let savedViewController = UINavigationController(rootViewController: SearchPokemonViewController(container: container))
-        savedViewController.navigationBar.barStyle = .black
+        //savedViewController.navigationBar.barStyle = .black
         savedViewController.tabBarItem = UITabBarItem(title: "Salvos", image: UIImage(named: "outline_find_in_page_black_24pt_1x"), tag: 2)
         
         
