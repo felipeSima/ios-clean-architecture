@@ -8,45 +8,46 @@
 import Foundation
 import RealmSwift
 
-//
-//  PokemonListModel.swift
-//  ios-base-architecture
-//
-//  Created by Felipe Silva Lima on 11/23/20.
-//
 
-import Foundation
-import RealmSwift
-
-/*
 // MARK: - PokemonListObject
-struct PokemonListObject: Object {
-    let count: Int
-    let next: String
-    let previous: Bool?
-    let results: [Pokemon]
+class PokemonListObject: Object {
+    @objc dynamic var count: Int = 0
+    @objc dynamic var next: String = ""
+    @objc dynamic var previous: Bool = false
+    var results = List<PokemonObject>()
 
-    init(count: Int, next: String, previous: Bool?, results: [Pokemon]) {
+    convenience init(count: Int, next: String, previous: Bool, results: List<PokemonObject>) {
+        self.init()
         self.count = count
         self.next = next
         self.previous = previous
         self.results = results
     }
     
-    @discardableResult
-    func convertToEntity() -> PokemonListEntity{
-        return PokemonListEntity(count: self.count, next: self.next, previous: self.previous, results: self.results)
+    func convertToModel() -> PokemonListModel {
+        let pokemons = Array(self.results).map {
+            return Pokemon(name: $0.name, url: $0.url)
+        }
+        return PokemonListModel(count: self.count, next: self.next, previous: self.previous, results: pokemons)
     }
 }
 
 // MARK: - Pokemon
-struct Pokemon {
-    let name: String
-    let url: String
+class PokemonObject: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var url: String = ""
 
-    init(name: String, url: String) {
+    convenience init(name: String, url: String) {
+        self.init()
         self.name = name
         self.url = url
     }
+    
+    func convertToModel() -> Pokemon{
+        return Pokemon(name: self.name, url: self.url)
+    }
+    
+    override class func primaryKey() -> String? {
+        return "name"
+    }
 }
-*/

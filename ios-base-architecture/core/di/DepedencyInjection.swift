@@ -20,7 +20,8 @@ class DepedencyInjection {
         //MARK: PokemonList
         
         container.register(PokemonListRemoteDatasource.self) { r in PokemonListRemoteDatasourceImpl()}
-        container.register(PokemonListRepository.self) { r in PokemonListRepositoryImpl(datasource: r.resolve(PokemonListRemoteDatasource.self)!)}
+        container.register(PokemonListLocalDataSource.self) { r in PokemonListLocalDataSourceImpl()}
+        container.register(PokemonListRepository.self) { r in PokemonListRepositoryImpl(remoteDatasource: r.resolve(PokemonListRemoteDatasource.self)!, localDatasource: r.resolve(PokemonListLocalDataSource.self)!)}
         container.register(GetPokemonList.self) { r in GetPokemonListImpl(repository: r.resolve(PokemonListRepository.self)!)}
         
         //MARK: PokemonDetail

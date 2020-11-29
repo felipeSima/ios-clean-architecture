@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 // MARK: - PokemonListModel
 struct PokemonListModel: Codable {
@@ -20,6 +21,18 @@ struct PokemonListModel: Codable {
         self.previous = previous
         self.results = results
     }
+    
+    func convertToObject() -> PokemonListObject{
+        let pokemonObjects = self.results.map {
+            return PokemonObject(name: $0.name, url: $0.url)
+        }
+        
+        let pokemonObjectList = List<PokemonObject>()
+        
+        pokemonObjectList.append(objectsIn: pokemonObjects)
+        
+        return PokemonListObject(count: self.count, next: self.next, previous: self.previous ?? false, results: pokemonObjectList)
+    }
 
 }
 
@@ -31,5 +44,9 @@ struct Pokemon: Codable {
     init(name: String, url: String) {
         self.name = name
         self.url = url
+    }
+    
+    func convertToObject() -> PokemonObject{
+        return PokemonObject(name: self.name, url: self.url)
     }
 }

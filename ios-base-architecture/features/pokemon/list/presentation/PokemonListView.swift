@@ -21,29 +21,22 @@ class PokemonListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var imageLogo: UIImageView = {
-       let imageView  = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "logoView")
-        return imageView
-    }()
-    
-    lazy var titleHeaderView: TitleHeaderView = {
-       let label = TitleHeaderView()
-        label.alignment = .center
-        label.bottomItem = imageLogo
-        label.titleLabel.textColor = .yellow
-        label.subtitleLabel.textColor = .yellow
-        imageLogo.snp.makeConstraints{ make in
-            make.edges.equalToSuperview().inset(10)
+    lazy var searchController:UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchBar.placeholder = "Qual pokémon você está procurando ?"
+        search.hidesNavigationBarDuringPresentation = false
+        if #available(iOS 13.0, *) {
+            search.searchBar.searchTextField.font = UIFont.defaultRegularFont(ofSize: 15)
+            search.hidesNavigationBarDuringPresentation = true
         }
-        return label
+        search.obscuresBackgroundDuringPresentation = false
+        return search
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
         tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
         return tableView

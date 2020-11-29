@@ -13,13 +13,15 @@ class PokemonListViewModel {
     
     var pokemons = [PokemonListEntity]()
     
+    var searchedPokemons = [PokemonListEntity]()
+    
     init(usecase: GetPokemonList){
         self.usecase = usecase
     }
     
-    func getPokemonList(onComplete: @escaping ([PokemonListEntity]) -> (), onFailure: @escaping (ServerError)-> Void){
-        usecase.getPokemonList { pokemons in
-            self.handleSuccess(pokemons.results, onComplete: onComplete)
+    func getPokemonList(from dataOrigin: DataOrigin, onComplete: @escaping ([PokemonListEntity]) -> (), onFailure: @escaping (ServerError)-> Void){
+        usecase.getPokemonList(dataOrigin: dataOrigin) { pokemons in
+            self.handleSuccess(with: dataOrigin, pokemons.results, onComplete: onComplete)
         } failure: { serverError in
             self.handleFailure(serverError)
             onFailure(serverError)
@@ -27,9 +29,9 @@ class PokemonListViewModel {
 
     }
     
-    func handleSuccess(_ pokemonList: [Pokemon], onComplete: @escaping ([PokemonListEntity]) -> ()){
+    func handleSuccess(with dataOrigin: DataOrigin, _ pokemonList: [Pokemon], onComplete: @escaping ([PokemonListEntity]) -> ()){
         pokemonList.forEach { pokemon in
-            usecase.getPokemon(name: pokemon.name) { poke in
+            usecase.getPokemon(dataOrigin: dataOrigin, name: pokemon.name) { poke in
                 self.getPokemonDetail(poke)
                 onComplete(self.pokemons)
             } failure: { serverError in
@@ -39,9 +41,11 @@ class PokemonListViewModel {
     }
     
     func getPokemonDetail(_ pokemonModel: PokemonModel) {
-        let pokemon = PokemonListEntity(name: pokemonModel.name, imageUrl: pokemonModel.sprites.front_default)
+        let pokemon = PokemonListEntity(name: pokemonModel.name, pokemonId: pokemonModel.id, imageUrl: pokemonModel.sprites.front_default)
         pokemons.append(pokemon)
     }
+    
+    
     
     func handleFailure(_ serverError: ServerError){
         

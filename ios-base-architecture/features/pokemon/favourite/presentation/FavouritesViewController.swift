@@ -12,7 +12,7 @@ import SkeletonView
 class FavouritesViewController: UIViewController {
     
     var container: Container!
-    var favouriteView = PokemonListView()
+    var favouriteView = FavouriteView()
     var viewModel: FavouritesViewModel
     
     init(container: Container) {
@@ -30,7 +30,6 @@ class FavouritesViewController: UIViewController {
         setNavigationController()
         layoutComponents()
         setDelegation()
-        getData()
     }
     
     func setNavigationController(){
@@ -50,52 +49,39 @@ class FavouritesViewController: UIViewController {
     }
     
     func setDelegation(){
-        favouriteView.tableView.delegate = self
-        favouriteView.tableView.dataSource = self
-    }
-    
-    func getData() {
-        DispatchQueue.main.async {
-            self.favouriteView.tableView.showAnimatedSkeleton()
-        }
-    }
-    
-    func handleSuccess(_ pokemonList: [PokemonListEntity]){
-        DispatchQueue.main.async {
-            self.favouriteView.tableView.hideSkeleton()
-            self.favouriteView.tableView.reloadData()
-        }
-    }
-    
-    func handleError(_ error: ServerError){
-        DispatchQueue.main.async {
-            self.favouriteView.tableView.hideSkeleton()
-            self.favouriteView.tableView.reloadData()
-        }
     }
 
 }
 
-extension FavouritesViewController: SkeletonTableViewDataSource, SkeletonTableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.pokemons.count
+extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
-        cell.set(serie: "No. \(indexPath.row)", pokemon: self.viewModel.pokemons[indexPath.row])
-        return cell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-       return "cell"
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = PokemonDetailViewController(pokemon: viewModel.pokemons[indexPath.row], container: container)
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = self.favouriteView.collectionView.frame.size.width - 60
+        let widthPerItem = availableWidth / 2
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10,left: 20,bottom: 10,right: 20
+)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
 }
+
+
+
 

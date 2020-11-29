@@ -7,14 +7,17 @@
 
 import UIKit
 import Swinject
+import WebKit
 
 class PokemonDetailViewController: UIViewController {
-
-    var viewModel: PokemonDetailViewModel
-    let pokemonDetailView = PokemonDetailView()
     
-    init(pokemon: PokemonListEntity, container: Container){
-        self.viewModel = PokemonDetailViewModel(pokemon: pokemon, usecase: container.resolve(GetPokemonDetail.self)!)
+    let pokemonId: Int
+    let detailView = PokemonDetailView()
+    var container: Container
+    
+    init(id: Int, container: Container){
+        self.container = container
+        self.pokemonId = id
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,8 +28,8 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationController()
-        layoutView()
-        getData()
+        constrainView()
+        setupWebView()
     }
     
     func setNavigationController(){
@@ -35,28 +38,18 @@ class PokemonDetailViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    func layoutView(){
-        self.view.addSubview(pokemonDetailView)
-        pokemonDetailView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+    func constrainView(){
+        self.view.addSubview(detailView)
+        detailView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
-    func getData(){
-        //pokemonDetailView.set(viewModel.pokemon)
-        
-        DispatchQueue.main.async {
-            self.viewModel.getPokemonDetail(self.handleSuccess, self.handleFailure)
-        }
- 
+    func setupWebView(){
+        let url = URL(string: "https://pokedex.org/#/pokemon/\(pokemonId)")
+        let myRequest = URLRequest(url: url!)
+        detailView.webView.load(myRequest)
     }
-    
-    func handleSuccess(_ pokemon: PokemonListEntity){
-        pokemonDetailView.set(pokemon)
-    }
-    
-    func handleFailure(_ failure: ServerError){
-        print("DEU RUIM PARCEIRO")
-    }
-
 }
+
+extension PokemonDetailViewController: WKUIDelegate {}

@@ -11,20 +11,31 @@ import Foundation
 
 class PokemonListRepositoryImpl: PokemonListRepository {
     
+    let localDatasource: PokemonListLocalDataSource
+    let remoteDatasource: PokemonListRemoteDatasource
     
-    let datasource: PokemonListRemoteDatasource
-    
-    init(datasource: PokemonListRemoteDatasource){
-        self.datasource = datasource
+    init(remoteDatasource: PokemonListRemoteDatasource, localDatasource: PokemonListLocalDataSource){
+        self.localDatasource = localDatasource
+        self.remoteDatasource = remoteDatasource
     }
     
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
+    func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
         
-        //Verify if is cached case not in cache get from
-        datasource.getPokemonsList(completion: completion, failure: failure)
+        switch dataOrigin {
+        case .local:
+            localDatasource.getPokemonList(completion: completion, failure: failure)
+        case .remote:
+            remoteDatasource.getPokemonsList { pokemonModel in
+                self.localDatasource.storeOnCache(pokemonModel)
+                completion(pokemonModel)
+            } failure: { serverError in
+                failure(serverError)
+            }
+
+        }
     }
     
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()){
-        datasource.getPokemon(name: name, completion: completion, failure: failure)
+    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()){
+        remoteDatasource.getPokemon(name: name, completion: completion, failure: failure)
     }
 }

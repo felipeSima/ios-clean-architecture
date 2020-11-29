@@ -11,10 +11,12 @@ import Foundation
 struct PokemonListEntity: Codable {
 
     let name: String
+    let pokemonId: Int
     let imageUrl: String
     
-    init(name: String, imageUrl: String){
+    init(name: String, pokemonId: Int, imageUrl: String){
         self.name = name
+        self.pokemonId = pokemonId
         self.imageUrl = imageUrl
     }
 }

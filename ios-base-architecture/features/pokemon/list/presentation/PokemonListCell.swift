@@ -116,10 +116,18 @@ class PokemonListCell: UITableViewCell {
         }
     }
     
-    //MARK: - Methods
-    @objc private func onEditButtonAction(){
+    func setFavouriteSelected(){
         editButton.setImage(UIImage(named: "baseline_favorite_black_24pt_1x"), for: .normal)
         editButton.setImageTintColor(.red)
+    }
+    
+    func setFavouriteUnselected(){
+        editButton.setImage(UIImage(named: "baseline_favorite_border_black_24pt_1x"), for: .normal)
+        editButton.setImageTintColor(.gray)
+    }
+    
+    //MARK: - Methods
+    @objc private func onEditButtonAction(){
         didPressedEditButton?()
     }
     

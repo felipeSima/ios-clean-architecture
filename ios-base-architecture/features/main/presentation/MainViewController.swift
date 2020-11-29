@@ -27,19 +27,12 @@ class MainViewController: UITabBarController {
         guard let container = container else {return}
         
         let listViewController = UINavigationController(rootViewController: PokemonListViewController(container: container))
-        //listViewController.navigationBar.barStyle = .black
         listViewController.tabBarItem = UITabBarItem(title: "Lista", image: UIImage(named: "outline_list_black_24pt_1x"), tag: 0)
         
-        let searchViewController = UINavigationController(rootViewController: FavouritesViewController(container: container))
-        //searchViewController.navigationBar.barStyle = .black
-        searchViewController.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(named: "outline_system_update_black_24pt_1x"), tag: 1)
-        
-        let savedViewController = UINavigationController(rootViewController: SearchPokemonViewController(container: container))
-        //savedViewController.navigationBar.barStyle = .black
-        savedViewController.tabBarItem = UITabBarItem(title: "Salvos", image: UIImage(named: "outline_find_in_page_black_24pt_1x"), tag: 2)
-        
-        
-        self.viewControllers = [listViewController,searchViewController, savedViewController]
+        let favouriteViewController = UINavigationController(rootViewController: FavouritesViewController(container: container))
+        favouriteViewController.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(named: "outline_system_update_black_24pt_1x"), tag: 1)
+
+        self.viewControllers = [listViewController,favouriteViewController]
     }
     
     override func viewDidAppear(_ animated: Bool) {

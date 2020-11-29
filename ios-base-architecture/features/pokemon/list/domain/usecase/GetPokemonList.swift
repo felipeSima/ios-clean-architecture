@@ -10,8 +10,8 @@ import Moya
 import Swinject
 
 protocol GetPokemonList {
-    func getPokemonList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ())
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
+    func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ())
+    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
 }
 
 struct GetPokemonListImpl: GetPokemonList {
@@ -21,12 +21,12 @@ struct GetPokemonListImpl: GetPokemonList {
         self.repository = repository
     }
     
-    func getPokemonList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
-        repository.getPokemonsList(completion: completion, failure: failure)
+    func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
+        repository.getPokemonsList(dataOrigin: dataOrigin, completion: completion, failure: failure)
     }
     
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()) {
-        repository.getPokemon(name: name, completion: completion, failure: failure)
+    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()) {
+        repository.getPokemon(dataOrigin: dataOrigin, name: name, completion: completion, failure: failure)
     }
     
 }

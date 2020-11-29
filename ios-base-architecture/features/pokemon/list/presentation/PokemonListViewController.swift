@@ -30,12 +30,18 @@ class PokemonListViewController: UIViewController {
         setNavigationController()
         layoutComponents()
         setDelegation()
-        getData()
+        getData(from: .remote)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //getData(from: .local)
     }
     
     func setNavigationController(){
         navigationItem.titleView = AppearanceUtils.GetLogoImage()
         navigationItem.hidesSearchBarWhenScrolling = true
+        navigationItem.searchController = pokemonView.searchController
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
     }
     
     override func viewWillLayoutSubviews() {
@@ -50,14 +56,15 @@ class PokemonListViewController: UIViewController {
     }
     
     func setDelegation(){
+        pokemonView.searchController.delegate = self
         pokemonView.tableView.delegate = self
         pokemonView.tableView.dataSource = self
     }
     
-    func getData() {
+    func getData(from datasource: DataOrigin) {
         DispatchQueue.main.async {
             self.pokemonView.tableView.showAnimatedSkeleton()
-            self.viewModel.getPokemonList(onComplete: self.handleSuccess, onFailure: self.handleError)
+            self.viewModel.getPokemonList(from: datasource, onComplete: self.handleSuccess, onFailure: self.handleError)
         }
     }
     
@@ -74,7 +81,19 @@ class PokemonListViewController: UIViewController {
             self.pokemonView.tableView.reloadData()
         }
     }
+}
 
+extension PokemonListViewController: UISearchControllerDelegate, UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else {return}
+        
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    }
 }
 
 extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableViewDelegate{
@@ -84,7 +103,10 @@ extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
-        cell.set(serie: "No. \(indexPath.row)", pokemon: self.viewModel.pokemons[indexPath.row])
+        cell.set(serie: "No. \(self.viewModel.pokemons[indexPath.row].pokemonId)", pokemon: self.viewModel.pokemons[indexPath.row])
+        cell.didPressedEditButton = {
+            cell.setFavouriteSelected()
+        }
         return cell
     }
     
@@ -93,7 +115,7 @@ extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = PokemonDetailViewController(pokemon: viewModel.pokemons[indexPath.row], container: container)
+        let viewController = PokemonDetailViewController(id: viewModel.pokemons[indexPath.row].pokemonId, container: container)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
