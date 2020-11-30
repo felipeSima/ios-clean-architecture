@@ -55,7 +55,7 @@ class PokemonListCell: UITableViewCell {
         return stackView
     }()
     
-    private lazy var editButton: UIButton = {
+    lazy var editButton: UIButton = {
         let button = UIButton(type : .system)
         button.setImage(UIImage(named: "baseline_favorite_border_black_24pt_1x"), for: .normal)
         button.setImageTintColor(.gray)
@@ -126,13 +126,18 @@ class PokemonListCell: UITableViewCell {
         editButton.setImageTintColor(.gray)
     }
     
+    var isChecked: Bool = false
+    
     //MARK: - Methods
     @objc private func onEditButtonAction(){
+        isChecked = !isChecked
+        isChecked ? setFavouriteSelected() : setFavouriteUnselected()
         didPressedEditButton?()
     }
     
+    
     public func set(serie: String?, pokemon: PokemonListEntity){
-        titleLabel.text = serie?.capitalizingFirstLetter()
+        titleLabel.text = "\(pokemon.pokemonId)".capitalizingFirstLetter()
         subtitleLabel.text = pokemon.name.capitalizingFirstLetter()
         self.iconImageView.kf.cancelDownloadTask()
         self.iconImageView.image = nil
@@ -147,7 +152,8 @@ class PokemonListCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        subtitleLabel.text = ""
+        editButton.setImage(UIImage(named: "baseline_favorite_border_black_24pt_1x"), for: .normal)
+        editButton.setImageTintColor(.gray)
     }
     
 }

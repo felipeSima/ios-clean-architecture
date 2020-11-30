@@ -13,6 +13,13 @@ class PokemonListViewModel {
     
     var pokemons = [PokemonListEntity]()
     
+    var pokemonsFiltered: [PokemonListEntity] {
+        get{
+            let pokemonList = pokemons.sorted(by: { $0.pokemonId < $1.pokemonId })
+            return pokemonList
+        }
+    }
+    
     var searchedPokemons = [PokemonListEntity]()
     
     init(usecase: GetPokemonList){

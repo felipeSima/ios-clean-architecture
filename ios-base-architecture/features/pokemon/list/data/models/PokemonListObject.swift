@@ -30,6 +30,10 @@ class PokemonListObject: Object {
         }
         return PokemonListModel(count: self.count, next: self.next, previous: self.previous, results: pokemons)
     }
+    
+    override class func primaryKey() -> String? {
+        return "next"
+    }
 }
 
 // MARK: - Pokemon

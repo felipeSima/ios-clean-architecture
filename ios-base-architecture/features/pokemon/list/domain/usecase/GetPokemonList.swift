@@ -12,6 +12,7 @@ import Swinject
 protocol GetPokemonList {
     func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ())
     func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
+
 }
 
 struct GetPokemonListImpl: GetPokemonList {

@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //FirebaseApp.configure()
         
+        RealmManager.shared.Configure()
+        
         DropDown.startListeningToKeyboard()
         
         

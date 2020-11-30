@@ -30,6 +30,7 @@ class FavouritesViewController: UIViewController {
         setNavigationController()
         layoutComponents()
         setDelegation()
+        getData()
     }
     
     func setNavigationController(){
@@ -49,23 +50,45 @@ class FavouritesViewController: UIViewController {
     }
     
     func setDelegation(){
+        favouriteView.collectionView.delegate = self
+        favouriteView.collectionView.dataSource = self
+    }
+    
+    func getData(){
+        viewModel.getFavouritedPokemons { pokemonList in
+            self.favouriteView.collectionView.reloadData()
+        } onFailure: { serverError in
+            print(serverError)
+            self.favouriteView.collectionView.reloadData()
+        }
+
     }
 
 }
 
 extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        setupFavouritesView()
+        return viewModel.pokemons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        return favouriteCell(for: collectionView, at: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let viewController = PokemonDetailViewController(id: viewModel.pokemons[indexPath.row].pokemonId, container: container)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func favouriteCell(for collectionView: UICollectionView, at indexPath: IndexPath) -> FavouriteCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favourite", for: indexPath) as! FavouriteCollectionViewCell
+        cell.set(pokemon: viewModel.pokemons[indexPath.row])
+        return cell
+    }
+    
+    
+    //MARK: CollectionView FlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let availableWidth = self.favouriteView.collectionView.frame.size.width - 60
         let widthPerItem = availableWidth / 2
@@ -79,6 +102,12 @@ extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    func setupFavouritesView(){
+        let hidePlaceholder = viewModel.pokemons.count > 0
+        favouriteView.emptyView.isHidden = hidePlaceholder
+        favouriteView.layoutIfNeeded()
     }
 }
 

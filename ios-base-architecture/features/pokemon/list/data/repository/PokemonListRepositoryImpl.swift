@@ -38,4 +38,5 @@ class PokemonListRepositoryImpl: PokemonListRepository {
     func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()){
         remoteDatasource.getPokemon(name: name, completion: completion, failure: failure)
     }
+
 }

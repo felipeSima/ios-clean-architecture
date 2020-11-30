@@ -24,10 +24,9 @@ class RealmManager {
     }()
     
     public func Configure(){
-        let config = Realm.Configuration(schemaVersion: 7, migrationBlock: { migration, oldSchemaVersion in
-             if (oldSchemaVersion < 7) {
-                
-                 // Nothing to do!
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
+             if (oldSchemaVersion < 1) {
+                print("Migration OldSchemaVersion")
              }
         })
         Realm.Configuration.defaultConfiguration = config
@@ -84,6 +83,7 @@ class RealmManager {
         do {
             try realm?.write {
                 realm?.add(object, update: update)
+                print("[Realm] - Object saved")
             }
         }
         catch{

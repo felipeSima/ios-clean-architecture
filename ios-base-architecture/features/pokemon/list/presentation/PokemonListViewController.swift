@@ -33,10 +33,6 @@ class PokemonListViewController: UIViewController {
         getData(from: .remote)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //getData(from: .local)
-    }
-    
     func setNavigationController(){
         navigationItem.titleView = AppearanceUtils.GetLogoImage()
         navigationItem.hidesSearchBarWhenScrolling = true
@@ -98,14 +94,14 @@ extension PokemonListViewController: UISearchControllerDelegate, UISearchBarDele
 
 extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.pokemons.count
+        return self.viewModel.pokemonsFiltered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
-        cell.set(serie: "No. \(self.viewModel.pokemons[indexPath.row].pokemonId)", pokemon: self.viewModel.pokemons[indexPath.row])
+        cell.set(serie: "No. \(self.viewModel.pokemonsFiltered[indexPath.row].pokemonId)", pokemon: self.viewModel.pokemonsFiltered[indexPath.row])
         cell.didPressedEditButton = {
-            cell.setFavouriteSelected()
+             
         }
         return cell
     }
@@ -115,10 +111,9 @@ extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = PokemonDetailViewController(id: viewModel.pokemons[indexPath.row].pokemonId, container: container)
+        let viewController = PokemonDetailViewController(id: viewModel.pokemonsFiltered[indexPath.row].pokemonId, container: container)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
 }
 
