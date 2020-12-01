@@ -20,7 +20,7 @@ protocol Failure: Error {
 struct ServerConnectionFailure: Failure {
     var error: Int
     var code: String
-    
+
     init(error: Int, code: String){
         self.error = error
         self.code = code
@@ -30,7 +30,7 @@ struct ServerConnectionFailure: Failure {
 struct InvalidParamFailure: Failure {
     var error: Int
     var code: String
-    
+
     init(error: Int, code: String){
         self.error = error
         self.code = code

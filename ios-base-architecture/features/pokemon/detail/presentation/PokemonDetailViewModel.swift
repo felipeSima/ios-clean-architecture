@@ -8,17 +8,17 @@
 import Foundation
 
 struct PokemonDetailViewModel {
-    
+
     var pokemon: PokemonListEntity
     var usecase: GetPokemonDetail
-    
+
     init(pokemon: PokemonListEntity, usecase: GetPokemonDetail){
         self.pokemon = pokemon
         self.usecase = usecase
     }
-    
-    func getPokemonDetail(_ onComplete: @escaping (PokemonListEntity) -> (), _ onFailure: @escaping (ServerError) -> ()){
+
+    func getPokemonDetail(_ onComplete: @escaping (PokemonListEntity) -> Void, _ onFailure: @escaping (ServerError) -> Void){
         usecase.getPokemonDetail(name: pokemon.name, onComplete, onFailure)
     }
-    
+
 }

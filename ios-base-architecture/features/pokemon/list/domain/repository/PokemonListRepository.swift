@@ -8,6 +8,6 @@
 import Foundation
 
 protocol PokemonListRepository {
-    func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ())
-    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
+    func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void)
+    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void)
 }

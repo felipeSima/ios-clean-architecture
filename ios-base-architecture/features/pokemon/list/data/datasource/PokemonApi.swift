@@ -14,27 +14,27 @@ enum PokemonApi {
     case getPokemonByName(name: String)
 }
 
-
 extension PokemonApi: BaseApi{
-    
+
     var requiresAuthorization: Authorization {
         return .anonymous
     }
-    
+
     var baseURL: URL {
         switch self {
         case .getNextPokemons(let offset, let limit):
-            "\(environmentBaseUrl)?offset=\(offset)&limit=\(limit)"
-            fallthrough
+            let baseUrlString = "\(environmentBaseUrl)?offset=\(offset)&limit=\(limit)"
+            guard let url = URL(string: baseUrlString) else { fatalError("Error cannot be configured")}
+            return url
         default:
             guard let url = URL(string: environmentBaseUrl) else { fatalError("Error cannot be configured") }
             return url
         }
     }
-    
+
     var path: String {
             switch self {
-            case .getNextPokemons(_, _):
+            case .getNextPokemons:
                 return "pokemon"
             case .getPokemonById(let id):
                 return "pokemon/\(id)/"
@@ -42,17 +42,17 @@ extension PokemonApi: BaseApi{
                 return "pokemon/\(name)/"
             }
         }
-        
+
     var method: Moya.Method {
         switch self {
         case .getNextPokemons, .getPokemonById, .getPokemonByName: return .get
         }
     }
-    
+
     var task: Task {
         switch self {
         case .getNextPokemons, .getPokemonById, .getPokemonByName: return .requestPlain
         }
     }
-    
+
 }

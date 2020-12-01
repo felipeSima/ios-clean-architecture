@@ -20,7 +20,7 @@ class PokemonDetailRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonDetailR
                 do{
                     let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
                     completion(results.convertToEntity())
-                }catch let err{
+                } catch let err{
                     print(err)
                 }
             case let .failure(error):
@@ -28,5 +28,5 @@ class PokemonDetailRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonDetailR
             }
         }
     }
-    
+
 }

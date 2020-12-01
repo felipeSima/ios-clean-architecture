@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImage {
-    
+
     func scaledTo(size: CGSize) -> UIImage? {
         let horizontalRatio = size.width / self.size.width
         let verticalRatio = size.height / self.size.height

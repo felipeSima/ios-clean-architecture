@@ -18,7 +18,7 @@ protocol BaseApi: TargetType{
 }
 
 extension BaseApi {
-    
+
     var environmentBaseUrl : String {
         switch NetworkManager.environment {
         case .production:
@@ -31,18 +31,18 @@ extension BaseApi {
             return "https://pokeapi.co/api/v2/"
         }
     }
-    
+
     var baseURL: URL {
         guard let url = URL(string: environmentBaseUrl) else { fatalError("Error cannot be configured") }
         return url
     }
-    
+
     var sampleData: Data{
         return Data()
     }
-    
+
     var headers: [String: String]? {
         return ["Content-type": "application/json"]
     }
-    
+
 }

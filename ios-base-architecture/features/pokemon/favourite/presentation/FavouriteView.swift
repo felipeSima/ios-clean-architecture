@@ -14,18 +14,18 @@ class FavouriteView: UIView{
         self.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         addComponents()
         layoutComponents()
-        
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func addComponents(){
         self.addSubview(emptyView)
         self.addSubview(collectionView)
     }
-    
+
     func layoutComponents(){
         emptyView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -35,20 +35,20 @@ class FavouriteView: UIView{
             make.edges.equalToSuperview()
         }
     }
-    
+
     lazy var emptyView: EmptyDataPlaceholderView = {
         let view = EmptyDataPlaceholderView()
         view.titleLabel.text = "Temos que pegar"
         view.subtitleLabel.text = "Sua lista de pokemons ainda está vazia."
         return view
     }()
-    
+
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.minimumLineSpacing = 20
-        
+
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
@@ -56,6 +56,6 @@ class FavouriteView: UIView{
         collectionView.isSkeletonable = true
         return collectionView
     }()
-    
+
 }
 

@@ -8,7 +8,6 @@
 import Foundation
 import RealmSwift
 
-
 // MARK: - PokemonListObject
 class PokemonListObject: Object {
     @objc dynamic var count: Int = 0
@@ -23,14 +22,14 @@ class PokemonListObject: Object {
         self.previous = previous
         self.results = results
     }
-    
+
     func convertToModel() -> PokemonListModel {
         let pokemons = Array(self.results).map {
             return Pokemon(name: $0.name, url: $0.url)
         }
         return PokemonListModel(count: self.count, next: self.next, previous: self.previous, results: pokemons)
     }
-    
+
     override class func primaryKey() -> String? {
         return "next"
     }
@@ -46,11 +45,11 @@ class PokemonObject: Object {
         self.name = name
         self.url = url
     }
-    
+
     func convertToModel() -> Pokemon{
         return Pokemon(name: self.name, url: self.url)
     }
-    
+
     override class func primaryKey() -> String? {
         return "name"
     }

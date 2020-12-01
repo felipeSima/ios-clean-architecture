@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 class BaseMoyaProvider<Target>: MoyaProvider<Target> where Target: Moya.TargetType {
-    
+
     func mapResponse<T: Codable>(_ result: Result<Response, MoyaError>) -> Result<T, Error> {
         switch result {
         case let .success(response):
@@ -20,14 +20,12 @@ class BaseMoyaProvider<Target>: MoyaProvider<Target> where Target: Moya.TargetTy
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let body = try response.map(T.self, using: decoder, failsOnEmptyData: false)
                 return .success(body)
-            }
-            catch {
+            } catch {
                 if let error = error as? MoyaError {
                     do {
                         let response = try error.response?.map(ErrorResponse.self)
                         return .failure(response!)
-                    }
-                    catch {
+                    } catch {
                         print(error)
                         return .failure(error)
                     }

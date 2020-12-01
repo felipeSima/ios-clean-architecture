@@ -96,6 +96,7 @@ PODS:
     - Realm (= 10.1.0)
   - SkeletonView (1.10.0)
   - SnapKit (4.2.0)
+  - SwiftLint (0.41.0)
   - SwiftyJSON (5.0.0)
   - Swinject (2.7.1)
   - TextFieldEffects (1.6.0)
@@ -112,6 +113,7 @@ DEPENDENCIES:
   - RealmSwift
   - SkeletonView
   - SnapKit
+  - SwiftLint
   - SwiftyJSON
   - Swinject
   - TextFieldEffects
@@ -141,6 +143,7 @@ SPEC REPOS:
     - RealmSwift
     - SkeletonView
     - SnapKit
+    - SwiftLint
     - SwiftyJSON
     - Swinject
     - TextFieldEffects
@@ -169,10 +172,11 @@ SPEC CHECKSUMS:
   RealmSwift: 725d1c10df64964b04aaa0058c19ce0f4b4c3f5a
   SkeletonView: 14fbe9702c7fb5c5f011b44ac3ae99fc73155726
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 5f01f53db0979c9c15984ba317222112a700dddb
+PODFILE CHECKSUM: 972d03d7ba2b7a7f4b749ff3d410a7d136fa54fc
 
 COCOAPODS: 1.10.0

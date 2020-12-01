@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchPokemonView: UIView {
-    
+
     override init(frame: CGRect){
         super.init(frame: frame)
         self.addSubview(tableView)
@@ -16,11 +16,11 @@ class SearchPokemonView: UIView {
             make.edges.equalToSuperview()
         }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     lazy var searchController:UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "Qual pokémon você está procurando ?"
@@ -32,7 +32,7 @@ class SearchPokemonView: UIView {
         search.obscuresBackgroundDuringPresentation = false
         return search
     }()
-    
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -41,5 +41,5 @@ class SearchPokemonView: UIView {
         tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
-    
+
 }

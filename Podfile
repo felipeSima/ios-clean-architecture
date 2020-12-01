@@ -17,6 +17,9 @@ target 'ios-base-architecture' do
   #DI
   pod 'Swinject'
   
+  #Lint
+  pod 'SwiftLint'
+  
   #layout
   pod 'SnapKit'
   

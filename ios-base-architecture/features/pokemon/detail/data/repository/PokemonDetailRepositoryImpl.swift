@@ -8,11 +8,11 @@
 import Foundation
 
 struct PokemonDetailRepositoryImpl: PokemonDetailRepository {
-    
+
     let datasource: PokemonDetailRemoteDatasource
-    
+
     func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
         datasource.getPokemonDetail(name: name, completion, failure)
     }
-    
+
 }

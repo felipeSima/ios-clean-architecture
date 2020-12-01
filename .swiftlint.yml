@@ -1,0 +1,105 @@
+# By default, SwiftLint uses a set of sensible default rules you can adjust:
+disabled_rules: # rule identifiers turned on by default to exclude from running
+    - trailing_newline
+    - opening_brace
+    - empty_count
+    - comma
+    - colon
+    - force_cast
+    #- type_name
+    - variable_name_min_length
+    #- trailing_semicolon
+    #- force_try
+    - function_body_length
+    - nesting
+    - variable_name
+    #- conditional_binding_cascade
+    #- variable_name_max_length
+    #- operator_whitespace
+    #- control_statement
+    #- legacy_constant
+    - line_length
+    #- return_arrow_whitespace
+    #- trailing_whitespace
+    #- closing_brace
+    #- statement_position
+    - type_body_length
+    - todo
+    #- legacy_constructor
+    #- valid_docs
+    - missing_docs
+    - file_length
+    #- leading_whitespace
+    - function_parameter_count
+    #- implicit_getter
+    #- for_where
+    #- computed_accessors_order
+    - unused_setter_value
+    - cyclomatic_complexity
+    #- class_delegate_protocol
+    #- switch_case_alignment
+    #- unneeded_break_in_switch
+    #- unused_optional_binding
+    #- closure_parameter_position
+    #- vertical_parameter_alignment
+    #- multiple_closures_with_trailing_closure
+    #- large_tuple
+    #- redundant_string_enum_value
+opt_in_rules: # some rules are turned off by default, so you need to opt-in
+  - empty_count # Find all the available rules by running: `swiftlint rules`
+  - missing_docs
+
+included: # paths to include during linting. `--path` is ignored if present.
+  - ios-base-architecture
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  #- Source/ExcludedFolder
+  #- Source/ExcludedFile.swift
+  #- Source/*/ExcludedFile.swift # Exclude files with a wildcard
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length:
+  warning: 110
+  error: 500
+  ignores_strings: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_multiline_comments: true
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 45
+    error: 50
+  excluded: iPhone # excluded via string
+  allowed_symbols: ["_"] # these are allowed in type names
+identifier_name:
+  min_length: # only min_length
+    warning: 2
+    #error: 2 # only error
+  excluded: # excluded via string array
+    - i
+    - _id
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, codeclimate, junit, html, emoji, sonarqube, markdown, github-actions-logging)

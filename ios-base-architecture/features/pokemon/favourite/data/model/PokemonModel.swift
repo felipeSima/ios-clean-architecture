@@ -15,7 +15,7 @@ struct PokemonModel: Codable {
     let weight: Int
     let base_experience: Int
     let sprites: Sprites
-    
+
     @discardableResult
     func convertToEntity() -> PokemonListEntity {
         return PokemonListEntity(name: self.name, pokemonId: self.id, imageUrl: self.sprites.front_default)
@@ -24,19 +24,4 @@ struct PokemonModel: Codable {
 
 struct Sprites: Codable {
     let front_default: String
-}
-
-extension PokemonModel: Hashable {
-    
-    static func == (lhs: PokemonModel, rhs: PokemonModel) -> Bool {
-        return lhs.id == rhs.id &&
-            lhs.name == rhs.name &&
-            lhs.height == rhs.height &&
-            lhs.weight == rhs.weight &&
-            lhs.base_experience == rhs.base_experience
-    }
-    
-    var hashValue: Int {
-        return (id << 48) &+ (height << 32) &+ (weight << 16) &+ base_experience
-    }
 }

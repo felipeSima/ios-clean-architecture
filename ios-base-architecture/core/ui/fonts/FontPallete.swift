@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIFont {
-    
+
     //App default font
     public static func defaultRegularFont(ofSize size:CGFloat) -> UIFont {
         return UIFont.montserratRegular(ofSize: size)
@@ -19,7 +19,7 @@ extension UIFont {
     public static func defaultLightFont(ofSize size:CGFloat) -> UIFont {
         return UIFont.montserratLight(ofSize: size)
     }
-    
+
     //Font default sizes
     public static var small:CGFloat = 12
     public static var smallmd:CGFloat = 14
@@ -27,13 +27,13 @@ extension UIFont {
     public static var mediumxs:CGFloat = 18
     public static var large:CGFloat = 20
     public static var extraLarge:CGFloat = 22
-    
+
     enum FontType {
         case regular
         case bold
         case light
     }
-    
+
     //Montserrat
     public static func montserratBlack(ofSize size:CGFloat) -> UIFont {
         return UIFont(name: "Montserrat-Black", size: size)!
@@ -86,6 +86,6 @@ extension UIFont {
     public static func montserratThinItalic(ofSize size:CGFloat) -> UIFont {
         return UIFont(name: "Montserrat-ThinItalic", size: size)!
     }
-    
+
 }
 

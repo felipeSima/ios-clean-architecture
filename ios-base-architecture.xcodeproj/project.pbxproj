@@ -104,6 +104,7 @@
 		9D788FB2256DA85B0046406B /* PokemonListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788FB1256DA85B0046406B /* PokemonListCell.swift */; };
 		9D788FB7256DAACA0046406B /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788FB6256DAACA0046406B /* TitleHeaderView.swift */; };
 		9D788FBC256DAB0A0046406B /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D788FBB256DAB0A0046406B /* DefaultLabel.swift */; };
+		9DA875502576B95000361489 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9DA8754F2576B95000361489 /* .swiftlint.yml */; };
 		9DF88AD3256EE64C00723027 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF88AD2256EE64C00723027 /* UIViewExtension.swift */; };
 		9DF88AD8256EF08600723027 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF88AD7256EF08500723027 /* StringExtension.swift */; };
 		9DF88AE6256FE02500723027 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF88AE5256FE02500723027 /* UIButtonExtension.swift */; };
@@ -218,6 +219,7 @@
 		9D788FB1256DA85B0046406B /* PokemonListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCell.swift; sourceTree = "<group>"; };
 		9D788FB6256DAACA0046406B /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
 		9D788FBB256DAB0A0046406B /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
+		9DA8754F2576B95000361489 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9DF88AD2256EE64C00723027 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9DF88AD7256EF08500723027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9DF88AE5256FE02500723027 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		9D136533256559050043ED5B = {
 			isa = PBXGroup;
 			children = (
+				9DA8754F2576B95000361489 /* .swiftlint.yml */,
 				9D13653E256559050043ED5B /* ios-base-architecture */,
 				9D1365552565590A0043ED5B /* ios-base-architectureTests */,
 				9D1365602565590A0043ED5B /* ios-base-architectureUITests */,
@@ -866,6 +869,7 @@
 			buildConfigurationList = 9D1365662565590A0043ED5B /* Build configuration list for PBXNativeTarget "ios-base-architecture" */;
 			buildPhases = (
 				BDC2AD1C2CC908A7E2CD042A /* [CP] Check Pods Manifest.lock */,
+				9DA8754B2576B8A600361489 /* Swiftlint */,
 				9D136538256559050043ED5B /* Sources */,
 				9D136539256559050043ED5B /* Frameworks */,
 				9D13653A256559050043ED5B /* Resources */,
@@ -966,6 +970,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA875502576B95000361489 /* .swiftlint.yml in Resources */,
 				9D1367142565C5AB0043ED5B /* Montserrat-Italic.otf in Resources */,
 				9D1367122565C5AB0043ED5B /* Montserrat-ExtraBold.otf in Resources */,
 				9D13671F2565C5AB0043ED5B /* Montserrat-ExtraLightItalic.otf in Resources */,
@@ -1100,6 +1105,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-base-architecture/Pods-ios-base-architecture-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9DA8754B2576B8A600361489 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		BDC2AD1C2CC908A7E2CD042A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

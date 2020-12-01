@@ -8,16 +8,16 @@
 import Foundation
 
 protocol PokemonListRemoteDatasource: BaseService<PokemonApi> {
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ())
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
-    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ())
+    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void)
+    func getPokemon(name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void)
+    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void)
 }
 
 class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemoteDatasource {
-    
+
     static let environment: BaseEnvironment = .developing
-    
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> (), failure: @escaping (ServerError) -> ()) {
+
+    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void) {
         let offset: Int = 0
         let limit: Int = 20
         provider.request(.getNextPokemons(offset: offset, limit: limit)) { result in
@@ -26,7 +26,7 @@ class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemot
                 do{
                     let pokemonList = try JSONDecoder().decode(PokemonListModel.self, from: response.data)
                     completion(pokemonList)
-                }catch let err{
+                } catch let err{
                     print(err)
                 }
             case let .failure(error):
@@ -34,15 +34,15 @@ class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemot
             }
         }
     }
-    
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()) {
+
+    func getPokemon(name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void) {
         provider.request(.getPokemonByName(name: name)) { result in
             switch result{
             case let .success(response):
                 do{
                     let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
                     completion(results)
-                }catch let err{
+                } catch let err{
                     print(err)
                 }
             case let .failure(error):
@@ -50,15 +50,15 @@ class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemot
             }
         }
     }
-    
-    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> (), failure: @escaping (ServerError) -> ()) {
+
+    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void) {
         provider.request(.getPokemonById(id: id)) { result in
             switch result{
             case let .success(response):
                 do{
                     let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
                     completion(results)
-                }catch let err{
+                } catch let err{
                     print(err)
                 }
             case let .failure(error):
@@ -66,6 +66,5 @@ class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemot
             }
         }
     }
-    
-    
+
 }

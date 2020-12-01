@@ -8,21 +8,21 @@
 import Foundation
 
 public class Debouncer {
-    
+
     private let timeInterval: TimeInterval
     private var timer: Timer?
-    
+
     typealias Handler = () -> Void
     var handler: (() -> Void)?
-    
+
     init(timeInterval: TimeInterval) {
         self.timeInterval = timeInterval
     }
-    
+
     public func cancelTimer() {
         timer?.invalidate()
     }
-    
+
     public func renewInterval() {
         //Invalidating timer case new input is computed
         timer?.invalidate()
@@ -31,7 +31,7 @@ public class Debouncer {
             self?.timeIntervalDidFinish(for: timer)
         })
     }
-    
+
     @objc private func timeIntervalDidFinish(for timer: Timer) {
         //Checking if the timer wasn´t invalidated by new input
         guard timer.isValid else {return}
@@ -40,6 +40,6 @@ public class Debouncer {
         //removing the reference of the last passed function
         handler = nil
     }
-    
+
 }
 
