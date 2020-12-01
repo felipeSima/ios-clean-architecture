@@ -11,13 +11,13 @@ import SkeletonView
 
 class FavouritesViewController: UIViewController {
 
-    var container: Container!
+    var resolver: Resolver
     var favouriteView = FavouriteView()
     var viewModel: FavouritesViewModel
 
-    init(container: Container) {
-        self.container = container
-        self.viewModel = FavouritesViewModel(usecase: container.resolve(GetPokemonList.self)!)
+    init(resolver: Resolver) {
+        self.resolver = resolver
+        self.viewModel = FavouritesViewModel(usecase: resolver.resolve(GetPokemonList.self)!)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -77,7 +77,7 @@ extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = PokemonDetailViewController(id: viewModel.pokemons[indexPath.row].pokemonId, container: container)
+        let viewController = PokemonDetailViewController(id: viewModel.pokemons[indexPath.row].pokemonId, resolver: resolver)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 

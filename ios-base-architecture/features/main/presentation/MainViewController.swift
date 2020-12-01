@@ -10,10 +10,10 @@ import Swinject
 
 class MainViewController: UITabBarController {
 
-    var container: Container?
+    var resolver: Resolver
 
-    init(container: Container){
-        self.container = container
+    init(resolver: Resolver){
+        self.resolver = resolver
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,12 +24,10 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let container = container else {return}
-
-        let listViewController = UINavigationController(rootViewController: PokemonListViewController(container: container))
+        let listViewController = UINavigationController(rootViewController: PokemonListViewController(resolver: resolver))
         listViewController.tabBarItem = UITabBarItem(title: "Lista", image: UIImage(named: "outline_list_black_24pt_1x"), tag: 0)
 
-        let favouriteViewController = UINavigationController(rootViewController: FavouritesViewController(container: container))
+        let favouriteViewController = UINavigationController(rootViewController: FavouritesViewController(resolver: resolver))
         favouriteViewController.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(named: "outline_system_update_black_24pt_1x"), tag: 1)
 
         self.viewControllers = [listViewController,favouriteViewController]

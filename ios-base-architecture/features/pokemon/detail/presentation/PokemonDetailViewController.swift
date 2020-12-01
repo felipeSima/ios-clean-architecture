@@ -13,10 +13,10 @@ class PokemonDetailViewController: UIViewController {
 
     let pokemonId: Int
     let detailView = PokemonDetailView()
-    var container: Container
+    var resolver: Resolver
 
-    init(id: Int, container: Container){
-        self.container = container
+    init(id: Int, resolver: Resolver){
+        self.resolver = resolver
         self.pokemonId = id
         super.init(nibName: nil, bundle: nil)
     }

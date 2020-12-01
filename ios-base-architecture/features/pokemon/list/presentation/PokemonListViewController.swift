@@ -11,13 +11,13 @@ import SkeletonView
 
 class PokemonListViewController: UIViewController {
 
-    var container: Container
+    var resolver: Resolver
     var viewModel: PokemonListViewModel
     var pokemonView = PokemonListView()
 
-    init(container: Container) {
-        self.container = container
-        self.viewModel = PokemonListViewModel(usecase: container.resolve(GetPokemonList.self)!)
+    init(resolver: Resolver) {
+        self.resolver = resolver
+        self.viewModel = PokemonListViewModel(usecase: resolver.resolve(GetPokemonList.self)!)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -111,7 +111,7 @@ extension PokemonListViewController: SkeletonTableViewDataSource, SkeletonTableV
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = PokemonDetailViewController(id: viewModel.pokemonsFiltered[indexPath.row].pokemonId, container: container)
+        let viewController = PokemonDetailViewController(id: viewModel.pokemonsFiltered[indexPath.row].pokemonId, resolver: resolver)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
