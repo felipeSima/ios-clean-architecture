@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Moya
+import Alamofire
 
 protocol PokemonListRemoteDatasource: BaseService<PokemonApi> {
     func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void)
@@ -14,13 +16,13 @@ protocol PokemonListRemoteDatasource: BaseService<PokemonApi> {
 }
 
 class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemoteDatasource {
-
     static let environment: BaseEnvironment = .developing
-
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void) {
+    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void){
         let offset: Int = 0
-        let limit: Int = 20
+        let limit: Int = 180
+        
         provider.request(.getNextPokemons(offset: offset, limit: limit)) { result in
+            //self.mapResponse(result)
             switch result{
             case let .success(response):
                 do{
