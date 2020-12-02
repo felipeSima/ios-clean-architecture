@@ -15,6 +15,13 @@ struct PokemonListModel: Codable {
     let previous: Bool?
     let results: [Pokemon]
 
+    enum CodingKeys: String, CodingKey {
+      case count
+      case next
+      case previous
+      case results
+    }
+    
     init(count: Int, next: String, previous: Bool?, results: [Pokemon]) {
         self.count = count
         self.next = next

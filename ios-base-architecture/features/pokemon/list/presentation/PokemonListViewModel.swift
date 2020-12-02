@@ -24,23 +24,27 @@ class PokemonListViewModel {
         self.usecase = usecase
     }
 
-    func getPokemonList(from dataOrigin: DataOrigin, onComplete: @escaping ([PokemonListEntity]) -> Void, onFailure: @escaping (ServerError) -> Void){
-        usecase.getPokemonList(dataOrigin: dataOrigin) { pokemons in
-            self.handleSuccess(with: dataOrigin, pokemons.results, onComplete: onComplete)
-        } failure: { serverError in
-            self.handleFailure(serverError)
-            onFailure(serverError)
+    func getPokemonList(from dataOrigin: DataOrigin, onComplete: @escaping ([PokemonListEntity]) -> Void, onFailure: @escaping (Fail) -> Void){
+        usecase.getPokemonList(dataOrigin: dataOrigin) { result in
+            switch result {
+            case let .success(pokemonListModel):
+                self.handleSuccess(with: dataOrigin, pokemonListModel.results, onComplete: onComplete)
+            case let .failure(error):
+                onFailure(Fail.unown)
+            }
         }
-
     }
 
     func handleSuccess(with dataOrigin: DataOrigin, _ pokemonList: [Pokemon], onComplete: @escaping ([PokemonListEntity]) -> Void){
         pokemonList.forEach { pokemon in
-            usecase.getPokemon(dataOrigin: dataOrigin, name: pokemon.name) { poke in
-                self.getPokemonDetail(poke)
-                onComplete(self.pokemons)
-            } failure: { serverError in
-                self.handleFailure(serverError)
+            usecase.getPokemon(dataOrigin: dataOrigin, name: pokemon.name) { result in
+                switch result {
+                case let .success(pokemonModel):
+                    self.getPokemonDetail(pokemonModel)
+                    onComplete(self.pokemons)
+                case let .failure(error):
+                    self.handleFailure(error)
+                }
             }
         }
     }
@@ -50,7 +54,7 @@ class PokemonListViewModel {
         pokemons.append(pokemon)
     }
 
-    func handleFailure(_ serverError: ServerError){
+    func handleFailure(_ serverError: Error){
 
     }
 

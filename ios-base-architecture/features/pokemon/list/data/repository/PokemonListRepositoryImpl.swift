@@ -19,24 +19,20 @@ class PokemonListRepositoryImpl: PokemonListRepository {
         self.remoteDatasource = remoteDatasource
     }
 
-    func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void) {
-
+    func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
         switch dataOrigin {
         case .local:
-            localDatasource.getPokemonList(completion: completion, failure: failure)
+            localDatasource.getPokemonList(completion: completion)
         case .remote:
-            remoteDatasource.getPokemonsList { pokemonModel in
-                self.localDatasource.storeOnCache(pokemonModel)
-                completion(pokemonModel)
-            } failure: { serverError in
-                failure(serverError)
+            remoteDatasource.getPokemonsList { result in
+                self.localDatasource.storeOnCache(result)
+                completion(result)
             }
-
         }
     }
 
-    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void){
-        remoteDatasource.getPokemon(name: name, completion: completion, failure: failure)
+    func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void){
+        remoteDatasource.getPokemon(name: name, completion: completion)
     }
 
 }

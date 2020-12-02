@@ -8,19 +8,25 @@
 import Foundation
 
 protocol PokemonListLocalDataSource {
-    func storeOnCache(_ pokemonModel: PokemonListModel)
-    func getPokemonList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void)
+    func storeOnCache(_ result: Result<PokemonListModel, Error>)
+    func getPokemonList(completion: @escaping (Result<PokemonListModel, Error>) -> Void)
 }
 
 struct PokemonListLocalDataSourceImpl: PokemonListLocalDataSource {
 
-    func storeOnCache(_ pokemonModel: PokemonListModel){
-        RealmManager.shared.save(object: pokemonModel.convertToObject(), update: .modified)
+    func storeOnCache(_ result: Result<PokemonListModel, Error>){
+        switch result {
+        case let .success(pokemonListModel):
+            RealmManager.shared.save(object: pokemonListModel.convertToObject(), update: .modified)
+        case let .failure(error):
+            print(error.localizedDescription)
+        }
+        
     }
 
-    func getPokemonList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void) {
+    func getPokemonList(completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
         guard let pokemonListObject = RealmManager.shared.fetchObject(ofType: PokemonListObject.self) else { return }
-        completion(pokemonListObject.convertToModel())
+        completion(.success(pokemonListObject.convertToModel()))
     }
 
 }

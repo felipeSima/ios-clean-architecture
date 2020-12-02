@@ -9,64 +9,59 @@ import Foundation
 import Moya
 import Alamofire
 
-protocol PokemonListRemoteDatasource: BaseService<PokemonApi> {
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void)
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void)
-    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void)
+protocol PokemonListRemoteDatasource {
+    func getPokemonsList(completion: @escaping (Result<PokemonListModel, Error>) -> Void)
+    func getPokemon(name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void)
+    func getPokemon(id: Int, completion: @escaping (Result<PokemonModel, Error>) -> Void)
 }
 
 class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemoteDatasource {
     static let environment: BaseEnvironment = .developing
-    func getPokemonsList(completion: @escaping (PokemonListModel) -> Void, failure: @escaping (ServerError) -> Void){
+    func getPokemonsList(completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
+        //Fixed values only for tests purposes
         let offset: Int = 0
-        let limit: Int = 180
-        
+        let limit: Int = 20
         provider.request(.getNextPokemons(offset: offset, limit: limit)) { result in
-            //self.mapResponse(result)
-            switch result{
-            case let .success(response):
-                do{
-                    let pokemonList = try JSONDecoder().decode(PokemonListModel.self, from: response.data)
-                    completion(pokemonList)
-                } catch let err{
-                    print(err)
-                }
-            case let .failure(error):
-                failure(ServerError(errorMessage: error.errorDescription, statusCode: error.errorCode))
-            }
+            completion(self.mapResponse(result))
         }
     }
-
-    func getPokemon(name: String, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void) {
+    func getPokemon(name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void) {
         provider.request(.getPokemonByName(name: name)) { result in
-            switch result{
-            case let .success(response):
-                do{
-                    let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
-                    completion(results)
-                } catch let err{
-                    print(err)
-                }
-            case let .failure(error):
-                failure(ServerError(errorMessage: error.errorDescription, statusCode: error.errorCode))
-            }
+            completion(self.mapResponse(result))
         }
     }
-
-    func getPokemon(id: Int, completion: @escaping (PokemonModel) -> Void, failure: @escaping (ServerError) -> Void) {
+    func getPokemon(id: Int, completion: @escaping (Result<PokemonModel, Error>) -> Void) {
         provider.request(.getPokemonById(id: id)) { result in
-            switch result{
-            case let .success(response):
-                do{
-                    let results = try JSONDecoder().decode(PokemonModel.self, from: response.data)
-                    completion(results)
-                } catch let err{
-                    print(err)
-                }
-            case let .failure(error):
-                failure(ServerError(errorMessage: error.errorDescription, statusCode: error.errorCode))
-            }
+            completion(self.mapResponse(result))
         }
     }
-
 }
+
+/*
+class PokemonListRemoteDataSource2Impl: PokemonListRemoteDatasource {
+    func getPokemonsList(completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
+        _ = AF.request("https://pokeapi.co/api/v2//pokemon/1")
+            .validate()
+            .responseDecodable(of: PokemonModel.self) { response in
+          guard let pokemonListModel = response.value else { return }
+            print(pokemonListModel)
+        }
+    }
+    func getPokemon(name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void) {
+        _ = AF.request("https://pokeapi.co/api/v2/")
+            .validate()
+            .responseDecodable(of: PokemonListModel.self) { response in
+          guard let pokemonListModel = response.value else { return }
+            print(pokemonListModel)
+        }
+    }
+    func getPokemon(id: Int, completion: @escaping (Result<PokemonModel, Error>) -> Void) {
+        _ = AF.request("https://pokeapi.co/api/v2/")
+            .validate()
+            .responseDecodable(of: PokemonListModel.self) { response in
+          guard let pokemonListModel = response.value else { return }
+            print(pokemonListModel)
+        }
+    }
+}
+*/

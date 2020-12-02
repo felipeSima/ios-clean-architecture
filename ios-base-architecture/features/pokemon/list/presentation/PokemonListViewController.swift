@@ -71,7 +71,7 @@ class PokemonListViewController: UIViewController {
         }
     }
 
-    func handleError(_ error: ServerError){
+    func handleError(_ error: Error){
         DispatchQueue.main.async {
             self.pokemonView.tableView.hideSkeleton()
             self.pokemonView.tableView.reloadData()
