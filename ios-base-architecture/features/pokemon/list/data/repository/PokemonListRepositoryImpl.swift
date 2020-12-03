@@ -9,12 +9,12 @@ import Foundation
 
 //The Main purpose of the Repository implementation is to either decide to get data from the remotedasource or the local datasource, and store in cache case needed.
 
-class PokemonListRepositoryImpl: PokemonListRepository {
+class PokemonListRepositoryImpl: IPokemonListRepository {
 
-    let localDatasource: PokemonListLocalDataSource
-    let remoteDatasource: PokemonListRemoteDatasource
+    let localDatasource: IPokemonListLocalDataSource
+    let remoteDatasource: IPokemonListRemoteDatasource
 
-    init(remoteDatasource: PokemonListRemoteDatasource, localDatasource: PokemonListLocalDataSource){
+    init(remoteDatasource: IPokemonListRemoteDatasource, localDatasource: IPokemonListLocalDataSource){
         self.localDatasource = localDatasource
         self.remoteDatasource = remoteDatasource
     }

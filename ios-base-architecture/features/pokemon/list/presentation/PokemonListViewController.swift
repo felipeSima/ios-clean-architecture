@@ -17,7 +17,7 @@ class PokemonListViewController: UIViewController {
 
     init(resolver: Resolver) {
         self.resolver = resolver
-        self.viewModel = PokemonListViewModel(usecase: resolver.resolve(GetPokemonList.self)!)
+        self.viewModel = PokemonListViewModel(usecase: resolver.resolve(IGetPokemonList.self)!)
         super.init(nibName: nil, bundle: nil)
     }
 

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct PokemonDetailRepositoryImpl: PokemonDetailRepository {
+struct PokemonDetailRepositoryImpl: IPokemonDetailRepository {
 
-    let datasource: PokemonDetailRemoteDatasource
+    let datasource: IPokemonDetailRemoteDatasource
 
     func getPokemonDetail(name: String, _ completion: @escaping (PokemonEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
         datasource.getPokemonDetail(name: name, completion, failure)

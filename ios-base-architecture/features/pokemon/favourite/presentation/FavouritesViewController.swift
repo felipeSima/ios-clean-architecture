@@ -17,7 +17,7 @@ class FavouritesViewController: UIViewController {
 
     init(resolver: Resolver) {
         self.resolver = resolver
-        self.viewModel = FavouritesViewModel(usecase: resolver.resolve(GetPokemonList.self)!)
+        self.viewModel = FavouritesViewModel(usecase: resolver.resolve(IGetPokemonList.self)!)
         super.init(nibName: nil, bundle: nil)
     }
 

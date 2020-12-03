@@ -9,7 +9,7 @@ import Foundation
 
 class PokemonListViewModel {
 
-    var usecase: GetPokemonList
+    var usecase: IGetPokemonList
 
     var pokemons = [PokemonEntity]()
 
@@ -20,7 +20,7 @@ class PokemonListViewModel {
 
     var searchedPokemons = [PokemonEntity]()
 
-    init(usecase: GetPokemonList){
+    init(usecase: IGetPokemonList){
         self.usecase = usecase
     }
 

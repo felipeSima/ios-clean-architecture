@@ -10,9 +10,9 @@ import Foundation
 struct PokemonDetailViewModel {
 
     var pokemon: PokemonEntity
-    var usecase: GetPokemonDetail
+    var usecase: IGetPokemonDetail
 
-    init(pokemon: PokemonEntity, usecase: GetPokemonDetail){
+    init(pokemon: PokemonEntity, usecase: IGetPokemonDetail){
         self.pokemon = pokemon
         self.usecase = usecase
     }

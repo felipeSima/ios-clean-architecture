@@ -10,11 +10,11 @@ import Swinject
 
 class PokemonListAssembler: Assembly {
     func assemble(container: Container) {
-        container.register(PokemonListRemoteDatasource.self) { _ in
+        container.register(IPokemonListRemoteDatasource.self) { _ in
             PokemonListRemoteDatasourceImpl()}
             //PokemonListRemoteDataSource2Impl()}
-        container.register(PokemonListLocalDataSource.self) { _ in PokemonListLocalDataSourceImpl()}
-        container.register(PokemonListRepository.self) { r in PokemonListRepositoryImpl(remoteDatasource: r.resolve(PokemonListRemoteDatasource.self)!, localDatasource: r.resolve(PokemonListLocalDataSource.self)!)}
-        container.register(GetPokemonList.self) { r in GetPokemonListImpl(repository: r.resolve(PokemonListRepository.self)!)}
+        container.register(IPokemonListLocalDataSource.self) { _ in PokemonListLocalDataSourceImpl()}
+        container.register(IPokemonListRepository.self) { r in PokemonListRepositoryImpl(remoteDatasource: r.resolve(IPokemonListRemoteDatasource.self)!, localDatasource: r.resolve(IPokemonListLocalDataSource.self)!)}
+        container.register(IGetPokemonList.self) { r in GetPokemonListImpl(repository: r.resolve(IPokemonListRepository.self)!)}
     }
 }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol PokemonListLocalDataSource {
+protocol IPokemonListLocalDataSource {
     func storeOnCache(_ result: Result<PokemonListModel, Error>)
     func getPokemonList(completion: @escaping (Result<PokemonListModel, Error>) -> Void)
 }
 
-struct PokemonListLocalDataSourceImpl: PokemonListLocalDataSource {
+struct PokemonListLocalDataSourceImpl: IPokemonListLocalDataSource {
 
     func storeOnCache(_ result: Result<PokemonListModel, Error>){
         switch result {

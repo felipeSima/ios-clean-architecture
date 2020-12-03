@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PokemonListRepository {
+protocol IPokemonListRepository {
     func getPokemonsList(dataOrigin: DataOrigin, completion: @escaping (Result<PokemonListModel, Error>) -> Void)
     func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void)
 }

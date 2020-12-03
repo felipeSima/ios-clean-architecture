@@ -9,15 +9,15 @@ import Foundation
 import Moya
 import Swinject
 
-protocol GetPokemonList {
+protocol IGetPokemonList {
     func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (Result<PokemonListModel, Error>) -> Void)
     func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void)
 }
 
-struct GetPokemonListImpl: GetPokemonList {
-    let repository: PokemonListRepository
+struct GetPokemonListImpl: IGetPokemonList {
+    let repository: IPokemonListRepository
 
-    init(repository: PokemonListRepository) {
+    init(repository: IPokemonListRepository) {
         self.repository = repository
     }
     

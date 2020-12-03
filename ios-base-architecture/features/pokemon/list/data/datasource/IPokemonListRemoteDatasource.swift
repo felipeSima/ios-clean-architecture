@@ -9,13 +9,13 @@ import Foundation
 import Moya
 import Alamofire
 
-protocol PokemonListRemoteDatasource {
+protocol IPokemonListRemoteDatasource {
     func getPokemonsList(completion: @escaping (Result<PokemonListModel, Error>) -> Void)
     func getPokemon(name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void)
     func getPokemon(id: Int, completion: @escaping (Result<PokemonModel, Error>) -> Void)
 }
 
-class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonListRemoteDatasource {
+class PokemonListRemoteDatasourceImpl: BaseService<PokemonApi>, IPokemonListRemoteDatasource {
     static let environment: BaseEnvironment = .developing
     func getPokemonsList(completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
         //Fixed values only for tests purposes
