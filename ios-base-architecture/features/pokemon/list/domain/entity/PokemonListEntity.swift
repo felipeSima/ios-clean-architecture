@@ -9,15 +9,22 @@ import Foundation
 
 // MARK: - PokemonListModel
 struct PokemonListEntity: Codable {
+     let count: Int
+     let next: String
+     let previous: Bool?
+     let results: [Pokemon]
 
-    let name: String
-    let pokemonId: Int
-    let imageUrl: String
-
-    init(name: String, pokemonId: Int, imageUrl: String){
-        self.name = name
-        self.pokemonId = pokemonId
-        self.imageUrl = imageUrl
-    }
-}
-
+     enum CodingKeys: String, CodingKey {
+       case count
+       case next
+       case previous
+       case results
+     }
+     
+     init(count: Int, next: String, previous: Bool?, results: [Pokemon]) {
+         self.count = count
+         self.next = next
+         self.previous = previous
+         self.results = results
+     }
+ }

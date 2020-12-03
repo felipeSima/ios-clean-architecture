@@ -135,7 +135,7 @@ class PokemonListCell: UITableViewCell {
         didPressedEditButton?()
     }
 
-    public func set(serie: String?, pokemon: PokemonListEntity){
+    public func set(serie: String?, pokemon: PokemonEntity){
         titleLabel.text = "No. \(pokemon.pokemonId)".capitalizingFirstLetter()
         subtitleLabel.text = pokemon.name.capitalizingFirstLetter()
         self.iconImageView.kf.cancelDownloadTask()

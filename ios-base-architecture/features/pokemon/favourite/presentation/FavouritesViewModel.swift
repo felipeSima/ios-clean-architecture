@@ -11,13 +11,13 @@ class FavouritesViewModel {
 
     var usecase: GetPokemonList
 
-    var pokemons = [PokemonListEntity]()
+    var pokemons = [PokemonEntity]()
 
     init(usecase: GetPokemonList){
         self.usecase = usecase
     }
 
-    func getFavouritedPokemons(onComplete: @escaping ([PokemonListEntity]) -> Void, onFailure: @escaping (Fail) -> Void){
+    func getFavouritedPokemons(onComplete: @escaping ([PokemonEntity]) -> Void, onFailure: @escaping (Fail) -> Void){
         usecase.getPokemonList(dataOrigin: .local) { result in
             switch result {
             case let .success(pokemonListModel):
@@ -28,7 +28,7 @@ class FavouritesViewModel {
         }
     }
 
-    private func handleSuccess(_ pokemonList: [Pokemon], onComplete: @escaping ([PokemonListEntity]) -> Void){
+    private func handleSuccess(_ pokemonList: [Pokemon], onComplete: @escaping ([PokemonEntity]) -> Void){
         pokemonList.forEach { pokemon in
             usecase.getPokemon(dataOrigin: .local, name: pokemon.name) { result in
                 switch result {
@@ -43,7 +43,7 @@ class FavouritesViewModel {
     }
 
     private func getPokemonDetail(_ pokemonModel: PokemonModel) {
-        let pokemon = PokemonListEntity(name: pokemonModel.name, pokemonId: pokemonModel.id, imageUrl: pokemonModel.sprites.front_default)
+        let pokemon = PokemonEntity(name: pokemonModel.name, pokemonId: pokemonModel.id, imageUrl: pokemonModel.sprites.front_default)
         pokemons.append(pokemon)
     }
 

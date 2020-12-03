@@ -9,11 +9,11 @@ import Foundation
 import Moya
 
 protocol PokemonDetailRemoteDatasource: BaseService<PokemonApi> {
-    func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void)
+    func getPokemonDetail(name: String, _ completion: @escaping (PokemonEntity) -> Void, _ failure: @escaping (ServerError) -> Void)
 }
 
 class PokemonDetailRemoteDatasourceImpl: BaseService<PokemonApi>, PokemonDetailRemoteDatasource {
-    func getPokemonDetail(name: String, _ completion: @escaping (PokemonListEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
+    func getPokemonDetail(name: String, _ completion: @escaping (PokemonEntity) -> Void, _ failure: @escaping (ServerError) -> Void) {
         provider.request(.getPokemonByName(name: name)) { result in
             switch result{
             case let .success(response):

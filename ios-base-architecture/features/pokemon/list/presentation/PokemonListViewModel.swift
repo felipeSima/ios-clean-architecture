@@ -11,20 +11,20 @@ class PokemonListViewModel {
 
     var usecase: GetPokemonList
 
-    var pokemons = [PokemonListEntity]()
+    var pokemons = [PokemonEntity]()
 
-    var pokemonsFiltered: [PokemonListEntity] {
+    var pokemonsFiltered: [PokemonEntity] {
         let pokemonList = pokemons.sorted(by: { $0.pokemonId < $1.pokemonId })
         return pokemonList
     }
 
-    var searchedPokemons = [PokemonListEntity]()
+    var searchedPokemons = [PokemonEntity]()
 
     init(usecase: GetPokemonList){
         self.usecase = usecase
     }
 
-    func getPokemonList(from dataOrigin: DataOrigin, onComplete: @escaping ([PokemonListEntity]) -> Void, onFailure: @escaping (Fail) -> Void){
+    func getPokemonList(from dataOrigin: DataOrigin, onComplete: @escaping ([PokemonEntity]) -> Void, onFailure: @escaping (Fail) -> Void){
         usecase.getPokemonList(dataOrigin: dataOrigin) { result in
             switch result {
             case let .success(pokemonListModel):
@@ -35,7 +35,7 @@ class PokemonListViewModel {
         }
     }
 
-    func handleSuccess(with dataOrigin: DataOrigin, _ pokemonList: [Pokemon], onComplete: @escaping ([PokemonListEntity]) -> Void){
+    func handleSuccess(with dataOrigin: DataOrigin, _ pokemonList: [Pokemon], onComplete: @escaping ([PokemonEntity]) -> Void){
         pokemonList.forEach { pokemon in
             usecase.getPokemon(dataOrigin: dataOrigin, name: pokemon.name) { result in
                 switch result {
@@ -50,7 +50,7 @@ class PokemonListViewModel {
     }
 
     func getPokemonDetail(_ pokemonModel: PokemonModel) {
-        let pokemon = PokemonListEntity(name: pokemonModel.name, pokemonId: pokemonModel.id, imageUrl: pokemonModel.sprites.front_default)
+        let pokemon = PokemonEntity(name: pokemonModel.name, pokemonId: pokemonModel.id, imageUrl: pokemonModel.sprites.front_default)
         pokemons.append(pokemon)
     }
 

@@ -12,7 +12,6 @@ import Swinject
 protocol GetPokemonList {
     func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (Result<PokemonListModel, Error>) -> Void)
     func getPokemon(dataOrigin: DataOrigin, name: String, completion: @escaping (Result<PokemonModel, Error>) -> Void)
-
 }
 
 struct GetPokemonListImpl: GetPokemonList {
@@ -21,7 +20,7 @@ struct GetPokemonListImpl: GetPokemonList {
     init(repository: PokemonListRepository) {
         self.repository = repository
     }
-
+    
     func getPokemonList(dataOrigin: DataOrigin, completion: @escaping (Result<PokemonListModel, Error>) -> Void) {
         repository.getPokemonsList(dataOrigin: dataOrigin, completion: completion)
     }

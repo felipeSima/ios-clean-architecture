@@ -29,7 +29,7 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func set(pokemon: PokemonListEntity){
+    func set(pokemon: PokemonEntity){
         pokemonName.text = pokemon.name.capitalizingFirstLetter()
         pokeballIcon.image = UIImage(named: "saved")
         self.pokemonImage.kf.cancelDownloadTask()

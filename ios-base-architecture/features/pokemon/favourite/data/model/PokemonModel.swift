@@ -17,8 +17,8 @@ struct PokemonModel: Codable {
     let sprites: Sprites
 
     @discardableResult
-    func convertToEntity() -> PokemonListEntity {
-        return PokemonListEntity(name: self.name, pokemonId: self.id, imageUrl: self.sprites.front_default)
+    func convertToEntity() -> PokemonEntity {
+        return PokemonEntity(name: self.name, pokemonId: self.id, imageUrl: self.sprites.front_default)
     }
 }
 

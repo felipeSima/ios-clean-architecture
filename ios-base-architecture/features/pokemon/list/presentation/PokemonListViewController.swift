@@ -64,7 +64,7 @@ class PokemonListViewController: UIViewController {
         }
     }
 
-    func handleSuccess(_ pokemonList: [PokemonListEntity]){
+    func handleSuccess(_ pokemonList: [PokemonEntity]){
         DispatchQueue.main.async {
             self.pokemonView.tableView.hideSkeleton()
             self.pokemonView.tableView.reloadData()
